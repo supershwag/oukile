@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @category = %w(doudou papiers bijoux vetements electronique divers)
     @item = Item.new
   end
 
@@ -18,6 +19,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @category = %w(doudou papiers bijoux vetements electronique divers)
     @item = Item.find(params[:id])
   end
 
