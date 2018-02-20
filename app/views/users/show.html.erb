@@ -1,7 +1,11 @@
 <div class="container">
-
+    <%= image_tag("default.jpg") %>
    <li><%= current_user.first_name %></li>
    <li><%= current_user.last_name %></li>
    <li><%= current_user.email %></li>
-
+   <%= link_to "Edit", edit_user_path(current_user) %>
+   <%= link_to "Delete", edit_user_path(current_user) %>
+   <%= link_to "My meetings", meeting_path(current_user) %>
+   <%= link_to "I found something", new_item_path %>
+   <%= link_to "my objects", item_path(current_user) %>
 </div>

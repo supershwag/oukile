@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+authorize @user
 def show
   @user = current_user
 end
