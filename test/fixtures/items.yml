@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  category: MyString
+  description: MyString
+  date_found: MyString
+  location: MyString
+  location_detailed: MyString
+  photo_id: MyString
+  reward: MyString
+  user: one
+
+two:
+  name: MyString
+  category: MyString
+  description: MyString
+  date_found: MyString
+  location: MyString
+  location_detailed: MyString
+  photo_id: MyString
+  reward: MyString
+  user: two
