@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @category = %w(doudou papiers bijoux vetements electronique divers)
+    @category = %w(doudou papiers bijoux vêtements électronique divers)
     @item = Item.new
   end
 

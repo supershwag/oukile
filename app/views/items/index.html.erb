@@ -7,7 +7,7 @@
 
 <div class="container">
   <div class="row">
-    <% @items.each do |itemm| %>
+    <% @items.each do |item| %>
     <% url = item.photo.file.nil? ? image_path('default.jpg') : cl_image_path(item.photo, crop: :fit) %>
     <div class="col-xs-12 col-sm-3">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= url %>);">
