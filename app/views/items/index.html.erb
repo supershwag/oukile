@@ -1,5 +1,5 @@
 
-<div>
+<div class="text-center">
   <h1>Tous nos objets trouvés</h1>
   <p>Vous avez perdu quelque chose ? Quelqu'un l'a peut-être trouvé !</p>
 </div>
@@ -8,20 +8,21 @@
 <div class="container">
   <div class="row">
     <% @items.each do |item| %>
-    <% url = item.photo.file.nil? ? image_path('default.jpg') : cl_image_path(item.photo, crop: :fit) %>
+    <% url = image_path('default.jpg') %>
     <div class="col-xs-12 col-sm-3">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= url %>);">
         <div class="card-header">
           <h2 class="card-category">
             <%= link_to item.name, item_path(item) %>
           </h2>
-          <p class="card-description">item.location - item.date_found</p>
-          <% end %>
+          <p class="card-description"><%= item.location %> - <%= item.date_found %></p>
         </div>
       </div>
     </div>
+          <% end %>
   </div>
   <% if policy(Item).create? %>
     <%= link_to "Ajouter un objet trouvé", new_item_path, class: "btn btn-primary" %>
   <% end %>
 </div>
+<%= link_to "Ajouter un objet trouvé", new_item_path, class: "btn btn-primary" %>
