@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="card card-show" style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= url %>);'>
+
+
+    <h2 class="card-category"><%= @meeting.start_date %></h2>
+    <div class="card-description-show">
+
+       <li><%= @meeting.start_date %></li>
+       <li><%= @meeting.end_date %></li>
+       <li><%= @meeting.user.name %></li>
+       <li><%= @meeting.item.name %></li>
+
+ </div>
+
+  <%= link_to "Retourner à la liste des meetings", meetings_path, class: "btn btn-primary" %>
