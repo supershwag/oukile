@@ -1,14 +1,13 @@
 <div class="container">
   <%= simple_form_for [@item] do |f| %>
-    <%= f.error_notification %>
-    <%= f.input :name, required: true %>
-    <%= f.input :category, required: true, collection: @category%>
-    <%= f.input :description, placeholder: "un doudou bleu et rouge..."%>
-    <%= f.input :date_found, required: true %>
-    <%= f.input :location, required: true %>
-    <%= f.input :location_detailed, placeholder: "dans le train 4687 en provenance Paris, dans le bus 82..." %>
-    <%= f.input :photo_id, required: true %>
-    <%= f.input :reward, placeholder: "une bière, une image de Céline Dion..." %>
+    <%= f.input :name, label: "Type d'objet", error: "Merci de préciser le type d'objet", required: true %>
+    <%= f.input :category, required: true, collection: @category, as: :hidden %>
+    <%= f.input :description, label: "Description de l'objet", error: "Merci de décrire précisément l'objet", placeholder: "Un doudou bleu et rouge..."%>
+    <%= f.input :date_found, label: "Date à laquelle l'objet a été trouvé", error: "Merci de préciser la date à laquelle l'objet a été trouvé",required: true,  as: :hidden %>
+    <%= f.input :location, label: "Ville où l'objet a été trouvé", error: "Merci de préciser dans quelle ville l'objet a été trouvé", required: true,  as: :hidden %>
+    <%= f.input :location_detailed, label: "Endroit précis où l'objet a été trouvé", error: "Merci de préciser l'endroit où l'objet a été trouvé", placeholder: "Dans le train 4687 en provenance Paris, dans le bus 82..." %>
+    <%= f.input :photo_id, label: "Photo de l'objet", error: "Merci d'envoyer une photo de l'objet", required: true %>
+    <%= f.input :reward, label: "Récompense proposée", placeholder: "une bière, une image de Céline Dion..." %>
     <%= f.submit "Mettre en ligne l'objet trouvé", class: "btn btn-primary" %>
   <% end %>
 </div>
