@@ -1,5 +1,14 @@
-<div class="container">
-  <%= image_tag 'https://images.unsplash.com/photo-1508461235343-942692734024?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d32e1387ade1dfa7f5012ce5e0fd7275&auto=format&fit=crop&w=1050&q=80', width: 600, height: 400%>
-<h1>OUKILELE = BEST APP EVER</h1>
-<p>(et bientot Bienvenue)</p>
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 50%), url(<%= image_path('https://images.unsplash.com/photo-1508461235343-942692734024?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d32e1387ade1dfa7f5012ce5e0fd7275&auto=format&fit=crop&w=1050&q=80')%>);">
+<div class="banner-content">
+  <h1>Oukilélé</h1>
+  <p>Vous avez perdu un objet ? On vous aide à le trouver</p>
+  <p class="text-center"><%= link_to "J'ai trouvé un objet", new_item_path, class: "btn btn-success btn-lg" %></p>
 </div>
+</div>
+
+
+
+
+
+
