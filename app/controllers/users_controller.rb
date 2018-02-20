@@ -1,6 +1,7 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
 
 def show
+  @user = current_user
 end
 
 def edit
@@ -8,7 +9,7 @@ def edit
 end
 
 def update
-    current_user.update(user_params)
+  current_user.update(user_params)
 end
 
 private
