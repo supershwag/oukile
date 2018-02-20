@@ -8,14 +8,17 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @category = %w(doudou papiers bijoux vetements electronique divers)
+    @category = %w(doudou papiers bijoux vêtements électronique divers)
     @item = Item.new
   end
 
   def create
     @item = Item.new(item_params)
-    @item.save
-    redirect_to items_path
+    if @item.save
+      redirect_to items_path
+    else
+      render :new
+    end
   end
 
   def edit
