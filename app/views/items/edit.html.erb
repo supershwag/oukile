@@ -4,7 +4,7 @@
     <%= f.input :name, required: true %>
     <%= f.input :category, required: true, collection: @category%>
     <%= f.input :description, placeholder: "un doudou bleu et rouge..."%>
-    <%= f.input :date_found, required: true %>
+    <%= f.input :date_found, required: true, input_html: {type: :date}%>
     <%= f.input :location, required: true %>
     <%= f.input :location_detailed, placeholder: "dans le train 4687 en provenance Paris, dans le bus 82..." %>
     <%= f.input :photo_id, required: true %>
