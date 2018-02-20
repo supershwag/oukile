@@ -1,0 +1,8 @@
+<div class="container">
+  <%= simple_form_for [@meeting] do |f| %>
+    <% f.error_notification %>
+    <%= f.input :start_date, label: "Debut des disponibilites", error: "Merci de donner vos disponibilites" %>
+    <%= f.input :end_date, label: "Fin des disponibilites", error: "Merci de préciser la fin de vos dispos" %>
+    <%= f.submit "Creer un meeting", class: "btn btn-primary" %>
+  <% end %>
+</div>

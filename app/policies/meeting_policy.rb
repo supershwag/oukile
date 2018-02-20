@@ -9,10 +9,17 @@ class MeetingPolicy < ApplicationPolicy
   end
 
   def update?
+    record.loser == user
     return true
   end
 
-  def edit?
+  # def edit?
+  #   record.loser == user
+  #   return true
+  # end
+
+  def destroy?
+    record.loser == user
     return true
   end
 

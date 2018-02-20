@@ -9,14 +9,17 @@ class ItemPolicy < ApplicationPolicy
   end
 
   def update?
+    record.finder == user
     return true
   end
 
   def edit?
+    record.finder == user
     return true
   end
 
   def destroy?
+    record.finder == user
     return true
   end
 
