@@ -21,5 +21,8 @@
     </div>
           <% end %>
   </div>
+  <% if policy(Item).create? %>
+    <%= link_to "Ajouter un objet trouvé", new_item_path, class: "btn btn-primary" %>
+  <% end %>
 </div>
 <%= link_to "Ajouter un objet trouvé", new_item_path, class: "btn btn-primary" %>
