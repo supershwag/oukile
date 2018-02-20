@@ -1,7 +1,6 @@
 class ItemsController < ApplicationController
   def index
-    @items = policy_scope(Item)
-    @items = Item.all
+    @items = policy_scope(Item).order(created_at: :desc)
   end
 
   def show
@@ -45,9 +44,10 @@ class ItemsController < ApplicationController
 
   def destroy
     @item = Item.find(params[:id])
+    @item.finder = current_user
+    authorize @item
     @item.destroy
     redirect_to items_path
-    authorize @item
   end
 
   private
