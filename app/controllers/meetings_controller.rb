@@ -39,5 +39,5 @@ private
 
     # Never trust parameters from the scary internet, only allow the white list through.
   def meeting_params
-    params.require(:meeting).permit(:user, :item, :owner, :start_date, :end_date)
+    params.require(:meeting).permit(:user, :item, :loser, :start_date, :end_date)
   end
