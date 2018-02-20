@@ -15,12 +15,15 @@
           <h2 class="card-category">
             <%= link_to item.name, item_path(item) %>
           </h2>
-          <p class="card-description"><%= item.location %> - <%= item.date_found %></p>
+          <div class="card-description text-left">
+          <p> <%= item.category %></p>
+           <p> <%= item.location %> - <%= Date.parse(item.date_found).strftime('%d-%m-%Y') %></p>
+           </div>
         </div>
       </div>
     </div>
           <% end %>
   </div>
-    <%= link_to "Ajouter un objet trouvé", new_item_path, class: "btn btn-primary" %>
+<%= link_to "Ajouter un objet trouvé", new_item_path, class: "btn btn-primary text-center" %>
 </div>
-<%= link_to "Ajouter un objet trouvé", new_item_path, class: "btn btn-primary" %>
+

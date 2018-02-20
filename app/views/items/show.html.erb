@@ -5,19 +5,23 @@
 
 
     <h2 class="card-category"><%= @item.name %></h2>
-    <div class="card-description-show">
+    <div class="card-description list-inline">
 
        <li><%= @item.category %></li>
+       <li><%= @item.name %></li>
        <li><%= @item.description %></li>
-       <li><%= @item.date_found.strftime('%d-%m-%Y') %></li>
+       <li><%= Date.parse(@item.date_found).strftime('%d-%m-%Y') %></li>
        <li><%= @item.location %></li>
        <li><%= @item.location_detailed %></li>
        <li><%= @item.reward %></li>
-
  </div>
+</div>
 
-  <%= link_to "Retourner à la liste", items_path, class: "btn btn-primary" %>
+<div class="container">
+  <%= link_to "Retourner à la liste", items_path, class: "btn btn-success" %>
+  <%= link_to "Mettre à jour l'objet", edit_item_path(@item.id), class: "btn btn-primary" %>
   <%= link_to "Effacer cet objet", item_path(@item.id),
       method: :delete,
       data: { confirm: "Voulez-vous vraiment effacer cet objet ?" },
       class: "btn btn-danger", id: "sweet-alert-demo" %>
+</div>

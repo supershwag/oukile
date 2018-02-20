@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   def index
+    @items = policy_scope(Item)
     @items = Item.all
   end
 
@@ -9,14 +10,14 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @category = %w(doudou papiers bijoux vêtements électronique divers)
+    @category = %w(Peluche "Papiers d'identité" Bijoux Vêtements Électronique Divers)
     @item = Item.new
     authorize @item
   end
 
   def create
     @item = Item.new(item_params)
-    @item.user = current_user
+    @item.finder = current_user
     authorize @item
     if @item.save
       redirect_to edit_item_path(@item)
@@ -26,24 +27,27 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @category = %w(doudou papiers bijoux vetements electronique divers)
-    authorize @item
+    @category = %w(Peluche "Papiers d'identité" Bijoux Vêtements Électronique Divers)
     @item = Item.find(params[:id])
+    authorize @item
   end
 
   def update
     @item = Item.find(params[:id])
-    @item.user = current_user
+    @item.finder = current_user
     authorize @item
-    @item.update(item_params)
-    redirect_to item_path(@item)
+    if @item.update(item_params)
+      redirect_to item_path(@item)
+    else
+      render :edit
+    end
   end
 
   def destroy
     @item = Item.find(params[:id])
     @item.destroy
     redirect_to items_path
-    # authorize @item
+    authorize @item
   end
 
   private
