@@ -8,14 +8,14 @@
 <div class="container">
   <div class="row">
     <% @items.each do |item| %>
-    <% url = item.photo.file.nil? ? image_path('default.jpg') : cl_image_path(item.photo, crop: :fit) %>
+    <% url = image_path('default.jpg') %>
     <div class="col-xs-12 col-sm-3">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= url %>);">
         <div class="card-header">
           <h2 class="card-category">
             <%= link_to item.name, item_path(item) %>
           </h2>
-          <p class="card-description">item.location - item.date_found</p>
+          <p class="card-description"><%= item.location %> - <%= item.date_found %></p>
           <% end %>
         </div>
       </div>
