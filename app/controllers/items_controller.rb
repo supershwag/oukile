@@ -5,11 +5,13 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    authorize @item
   end
 
   def new
     @category = %w(doudou papiers bijoux vêtements électronique divers)
     @item = Item.new
+    authorize @item
   end
 
   def create
@@ -25,11 +27,14 @@ class ItemsController < ApplicationController
 
   def edit
     @category = %w(doudou papiers bijoux vetements electronique divers)
+    authorize @item
     @item = Item.find(params[:id])
   end
 
   def update
     @item = Item.find(params[:id])
+    @item.user = current_user
+    authorize @item
     @item.update(item_params)
     redirect_to item_path(@item)
   end
@@ -38,6 +43,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @item.destroy
     redirect_to items_path
+    # authorize @item
   end
 
   private
