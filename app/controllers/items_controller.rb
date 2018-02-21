@@ -5,11 +5,12 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @dispos = @item.dispos
     authorize @item
   end
 
   def new
-    @category = %w(Peluche "Papiers d'identité" Bijoux Vêtements Électronique Divers)
+    @category = %w(Peluche Papiersdidentité Bijoux Vêtements Électronique Divers)
     @item = Item.new
     authorize @item
   end
@@ -26,7 +27,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @category = %w(Peluche "Papiers d'identité" Bijoux Vêtements Électronique Divers)
+    @category = %w(Peluche Papiersdidentité Bijoux Vêtements Électronique Divers)
     @item = Item.find(params[:id])
     authorize @item
   end
@@ -53,6 +54,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :category, :description, :date_found, :location, :location_details, :photo_id, :reward)
+    params.require(:item).permit(:name, :category, :description, :date_found, :location, :location_details, :photo_id, :reward, :start_date, :end_date)
   end
 end

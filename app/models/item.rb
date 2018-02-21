@@ -1,5 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :finder, class_name: "User", foreign_key: "user_id"
+  has_many :dispos
   # belongs_to :user
   validates :category, presence: true
   validates :date_found, presence: true
