@@ -2,6 +2,7 @@ class Item < ApplicationRecord
   belongs_to :finder, class_name: "User", foreign_key: "user_id"
   # belongs_to :user
   mount_uploader :photo, PhotoUploader
+  has_many :dispos, dependent: :destroy
   validates :category, presence: true
   validates :date_found, presence: true
   validates :location, presence: true

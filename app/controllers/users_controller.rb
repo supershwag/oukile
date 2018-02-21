@@ -3,13 +3,17 @@ skip_after_action :verify_authorized
 
 def show
   @user = current_user
+  authorize @user
 end
 
 def edit
   @user = current_user
+  authorize @user
 end
 
 def update
+  @user = current_user
+  authorize @user
   if current_user.update(user_params)
       redirect_to user_path(current_user)
     else
