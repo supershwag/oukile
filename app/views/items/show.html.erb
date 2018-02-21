@@ -7,6 +7,8 @@
       <br>
       <%= link_to "Mettre à jour l'objet", edit_item_path(@item.id), class: "btn btn-primary" %>
       <br>
+      <button type="button" id="set-meeting" class="btn btn-primary">Meeting</button>
+      <br>
       <%= link_to "Effacer cet objet", item_path(@item.id),
       method: :delete,
       data: { confirm: "Voulez-vous vraiment effacer cet objet ?" },
