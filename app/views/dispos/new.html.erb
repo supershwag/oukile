@@ -1,0 +1,8 @@
+<div class="container">
+  <%= simple_form_for [@item, @dispo] do |f| %>
+      <% f.error_notification %>
+      <%= f.input :start_date, label: "Debut des disponibilites", error: "Merci de donner vos disponibilites", input_html: {type: :date, value: Time.now.strftime('%d-%m-%Y')} %>
+      <%= f.input :end_date, label: "Fin des disponibilites", error: "Merci de préciser la fin de vos dispos", input_html: {type: :date, value: Time.now.strftime('%d-%m-%Y')} %>
+      <%= f.submit "Creer une disponibilite", class: "btn btn-primary" %>
+    <% end %>
+</div>

@@ -1,26 +1,31 @@
-
-<% url = image_path('default.jpg') %>
-<div class="container">
-  <div class="card card-show" style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= url %>);'>
-
-
-    <h2 class="card-category"><%= @item.name %></h2>
-    <div class="card-description list-inline">
-
-       <li><%= @item.category %></li>
-       <li><%= @item.description %></li>
-       <li><%= Date.parse(@item.date_found).strftime('%d-%m-%Y') %></li>
-       <li><%= @item.location %></li>
-       <li><%= @item.location_detailed %></li>
-       <li><%= @item.reward %></li>
- </div>
-</div>
-
-<div class="container">
-  <%= link_to "Retourner à la liste", items_path, class: "btn btn-success" %>
-  <%= link_to "Mettre à jour l'objet", edit_item_path(@item.id), class: "btn btn-primary" %>
-  <%= link_to "Effacer cet objet", item_path(@item.id),
-      method: :delete,
-      data: { confirm: "Voulez-vous vraiment effacer cet objet ?" },
-      class: "btn btn-danger", id: "sweet-alert-demo" %>
+<div class="item-show">
+  <div class="item-show-photo">
+    <%= cl_image_tag @item.photo, height: 300, width: 400, crop: :fill %>
+    <div class="buttons">
+      <%= link_to "Retourner à la liste", items_path, class: "btn btn-success" %>
+      <br>
+      <%= link_to "Mettre à jour l'objet", edit_item_path(@item.id), class: "btn btn-primary" %>
+      <br>
+      <%= link_to "Effacer cet objet", item_path(@item.id),
+        method: :delete,
+        data: { confirm: "Voulez-vous vraiment effacer cet objet ?" },
+        class: "btn btn-danger", id: "sweet-alert-demo" %>
+    </div>
+  </div>
+  <div class="item-show-details">
+    <h3>Nom</h3>
+    <%= @item.name %>
+    <br>
+    <h3>Categorie</h3>
+    <%= @item.category %>
+    <br>
+    <h3>Description</h3>
+    <%= @item.description %>
+    <br>
+    <h3>Date Trouvé</h3>
+    <%= Date.parse(@item.date_found).strftime('%d-%m-%Y') %>
+    <br>
+    <h3>Lieu</h3>
+    <%= @item.location %>
+  </div>
 </div>
