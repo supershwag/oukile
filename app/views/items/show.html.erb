@@ -35,13 +35,13 @@
     <h3>Nom</h3>
     <%= @item.name %>
     <br>
-    <h3>Categorie</h3>
+    <h3>Catégorie</h3>
     <%= @item.category %>
     <br>
     <h3>Description</h3>
     <%= @item.description %>
     <br>
-    <h3>Date Trouvé</h3>
+    <h3>Date où l'objet a été trouvé</h3>
     <%= Date.parse(@item.date_found).strftime('%d-%m-%Y') %>
     <br>
     <h3>Lieu</h3>
