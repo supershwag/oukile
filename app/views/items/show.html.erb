@@ -1,35 +1,51 @@
-<div class="item-show">
+<div class="container">
   <div class="item-show-photo">
     <%= cl_image_tag @item.photo, height: 300, width: 400, crop: :fill %>
     <div class="buttons">
-      <%= link_to "Retourner à la liste", items_path, class: "btn btn-success" %>
-      <br>
-      <%= link_to "Mettre à jour l'objet", edit_item_path(@item.id), class: "btn btn-primary" %>
-      <br>
       <button type="button" id="set-meeting" class="btn btn-primary">Meeting</button>
-      <br>
-      <%= link_to "Effacer cet objet", item_path(@item.id),
-      method: :delete,
-      data: { confirm: "Voulez-vous vraiment effacer cet objet ?" },
-      class: "btn btn-danger", id: "sweet-alert-demo" %>
+          <% @dispos.each do |dispo| %>
+            <li>
+              <%= dispo.start_date %>
+              <%= dispo.end_date %>
+           </li>
+          <% end %>
+
+          <% if policy(@item).update? %>
+              <%= link_to "Ajouter des disponibilités pour rendre l'objet", new_item_dispo_path(@item) %>
+            <% end %>
+
+        <%= link_to "Retourner à la liste", items_path, class: "btn btn-success" %>
+
+        <% if policy(@item).update? %>
+          <%= link_to "Mettre à jour l'objet", edit_item_path(@item.id), class: "btn btn-primary" %>
+        <% end %>
+
+        <% if policy(@item).destroy? %>
+          <%= link_to "Effacer cet objet", item_path(@item.id),
+              method: :delete,
+              data: { confirm: "Voulez-vous vraiment effacer cet objet ?" },
+              class: "btn btn-danger", id: "sweet-alert-demo" %>
+      <% end %>
+
+      <%= render 'shared/modal' %>
     </div>
   </div>
-  <div class="item-show-details">
-        <h3>Nom</h3>
-       <%= @item.name %>
-       <br>
-       <h3>Categorie</h3>
-       <%= @item.category %>
-       <br>
-       <h3>Description</h3>
-       <%= @item.description %>
-       <br>
-       <h3>Date Trouvé</h3>
-       <%= Date.parse(@item.date_found).strftime('%d-%m-%Y') %>
-       <br>
-       <h3>Lieu</h3>
-       <%= @item.location %>
+</div>
+<div class="item-show-details">
+  <h3>Nom</h3>
+  <%= @item.name %>
+  <br>
+  <h3>Categorie</h3>
+  <%= @item.category %>
+  <br>
+  <h3>Description</h3>
+  <%= @item.description %>
+  <br>
+  <h3>Date Trouvé</h3>
+  <%= Date.parse(@item.date_found).strftime('%d-%m-%Y') %>
+  <br>
+  <h3>Lieu</h3>
+  <%= @item.location %>
+  -      <li>
   </div>
 </div>
-
-<%= render 'shared/modal' %>

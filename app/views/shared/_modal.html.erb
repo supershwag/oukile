@@ -2,6 +2,11 @@
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
+    <% @dispos.each do |dispo| %>
+            <li>
+              <%= dispo.start_date %>
+              <%= dispo.end_date%>
+           </li>
+          <% end %>
   </div>
 </div>
