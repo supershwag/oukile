@@ -1,21 +1,17 @@
 
-<% url = image_path('default.jpg') %>
-<div class="container">
-  <div class="card card-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @item.photo, height: 300, width: 400, crop: :fill %>')">
-
-
-    <h2 class="card-category"><%= @item.name %></h2>
-    <div class="card-description list-inline">
-
+<div class="item-show">
+  <div class="item-show-photo">
+    <%= cl_image_tag @item.photo, height: 300, width: 400, crop: :fill %>
+  </div>
+  <div class="item-show-details">
+       <li><%= @item.name %></li>
        <li><%= @item.category %></li>
        <li><%= @item.name %></li>
        <li><%= @item.description %></li>
        <li><%= Date.parse(@item.date_found).strftime('%d-%m-%Y') %></li>
        <li><%= @item.location %></li>
-       <li><%= @item.location_detailed %></li>
- </div>
+  </div>
 </div>
-
 <div class="container">
   <%= link_to "Retourner à la liste", items_path, class: "btn btn-success" %>
   <%= link_to "Mettre à jour l'objet", edit_item_path(@item.id), class: "btn btn-primary" %>
