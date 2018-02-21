@@ -1,12 +1,21 @@
-<div class="container">
-
-    <%= image_tag("default.jpg") %>
-   <li><%= current_user.first_name %></li>
-   <li><%= current_user.last_name %></li>
-   <li><%= current_user.email %></li>
-   <%= link_to "Edit", edit_user_path(current_user) %>
-   <%= link_to "Delete", edit_user_path(current_user) %>
-   <%= link_to "My meetings", meeting_path(current_user) %>
-   <%= link_to "I found something", new_item_path %>
-   <%= link_to "my objects", item_path(current_user) %>
+<div class="user-show">
+  <div class="user-show-photo">
+   <%= cl_image_tag current_user.photo, height: 300, width: 400, crop: :fill %>
+   <div class="buttons">
+     <%= link_to "Mettre à jour", edit_user_path(current_user), class: "btn btn-primary" %>
+     <br>
+     <%= link_to "Mes meetings", meeting_path(current_user), class: "btn btn-primary" %>
+     <br>
+     <%= link_to "J'ai trouvé!", new_item_path, class: "btn btn-primary" %>
+     <br>
+   </div>
+ </div>
+ <div class="user-show-details">
+  <h3>Nom</h3>
+  <%= current_user.first_name %>
+  <h3>Nom de Famille</h3>
+  <%= current_user.last_name %>
+  <h3>Email</h3>
+  <%= current_user.email %>
+  </div>
 </div>

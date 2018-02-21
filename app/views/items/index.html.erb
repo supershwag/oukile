@@ -10,7 +10,7 @@
     <% @items.each do |item| %>
     <% url = image_path('default.jpg') %>
     <div class="col-xs-12 col-sm-3">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= url %>);">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path item.photo, height: 300, width: 400, crop: :fill %>')">
         <div class="card-header">
           <h2 class="card-category">
             <%= link_to item.name, item_path(item) %>

@@ -5,6 +5,8 @@
     <%= f.input :category, label: "Catégorie de l'objet trouvé", collection: @category, error: "Merci de préciser la catégorie de l'objet" %>
     <%= f.input :location, label: "Ville où l'objet a été trouvé", error: "Merci de préciser dans quelle ville l'objet a été trouvé" %>
     <%= f.input :date_found, label: "Date à laquelle l'objet a été trouvé", error: "Merci de préciser la date à laquelle l'objet a été trouvé", input_html: {type: :date, value: Time.now.strftime('%d-%m-%Y')} %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
     <%= f.submit "J'ai trouvé!", class: "btn btn-primary" %>
   <% end %>
 </div>
