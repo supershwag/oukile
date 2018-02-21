@@ -6,8 +6,6 @@
     <%= f.input :date_found, label: "Date à laquelle l'objet a été trouvé", error: "Merci de préciser la date à laquelle l'objet a été trouvé",required: true,  as: :hidden %>
     <%= f.input :location, label: "Ville où l'objet a été trouvé", error: "Merci de préciser dans quelle ville l'objet a été trouvé", required: true,  as: :hidden %>
     <%= f.input :location_detailed, label: "Endroit précis où l'objet a été trouvé", error: "Merci de préciser l'endroit où l'objet a été trouvé", placeholder: "Dans le train 4687 en provenance Paris, dans le bus 82..." %>
-    <%= f.input :photo_id, label: "Photo de l'objet", error: "Merci d'envoyer une photo de l'objet", required: true %>
-    <%= f.input :reward, label: "Récompense proposée", placeholder: "une bière, une image de Céline Dion..." %>
     <%= f.submit "Mettre en ligne l'objet trouvé", class: "btn btn-primary" %>
   <% end %>
 </div>
