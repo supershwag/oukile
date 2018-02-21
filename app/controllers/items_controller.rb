@@ -1,6 +1,14 @@
 class ItemsController < ApplicationController
   def index
     @items = policy_scope(Item).order(created_at: :desc)
+    @items = Item.where.not(latitude: nil, longitude: nil)
+
+    @markers = @items.map do |item|
+      {
+        lat: item.latitude,
+        lng: item.longitude
+      }
+    end
   end
 
   def show
@@ -9,7 +17,7 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @category = %w(Peluche "Papiers d'identité" Bijoux Vêtements Électronique Divers)
+    @category = ["Bijoux", "Électronique", "Papiers d'identité", "Peluche", "Vêtements",  "Divers"]
     @item = Item.new
     authorize @item
   end
@@ -26,7 +34,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @category = %w(Peluche "Papiers d'identité" Bijoux Vêtements Électronique Divers)
+    @category = ["Bijoux", "Électronique", "Papiers d'identité", "Peluche", "Vêtements",  "Divers"]
     @item = Item.find(params[:id])
     authorize @item
   end
