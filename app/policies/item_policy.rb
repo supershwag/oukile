@@ -1,5 +1,9 @@
 class ItemPolicy < ApplicationPolicy
 
+  def index?
+    true
+  end
+
   def new?
     return true
   end
@@ -10,17 +14,14 @@ class ItemPolicy < ApplicationPolicy
 
   def update?
     record.finder == user
-    return true
   end
 
   def edit?
     record.finder == user
-    return true
   end
 
   def destroy?
     record.finder == user
-    return true
   end
 
   class Scope < Scope

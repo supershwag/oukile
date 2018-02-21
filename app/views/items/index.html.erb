@@ -1,4 +1,4 @@
-
+<% if policy(Item).index? %>
 <div class="text-center">
   <h1>Tous nos objets trouvés</h1>
   <p>Vous avez perdu quelque chose ? Quelqu'un l'a peut-être trouvé !</p>
@@ -26,4 +26,4 @@
   </div>
 <%= link_to "Ajouter un objet trouvé", new_item_path, class: "btn btn-primary text-center" %>
 </div>
-
+<% end %>

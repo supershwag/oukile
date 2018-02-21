@@ -29,6 +29,7 @@ class ItemsController < ApplicationController
   def edit
     @category = %w(Peluche Papiersdidentité Bijoux Vêtements Électronique Divers)
     @item = Item.find(params[:id])
+    @item.finder = current_user
     authorize @item
   end
 
