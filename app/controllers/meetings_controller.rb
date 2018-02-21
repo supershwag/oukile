@@ -1,5 +1,5 @@
 class MeetingsController < ApplicationController
-  before_action :set_meeting, only: [:show, :edit, :update, :destroy]
+  before_action :set_meeting, only: [:new, :create, :edit, :update, :accept, :decline]
 
   def new
     @meeting = Meeting.new
@@ -10,7 +10,7 @@ class MeetingsController < ApplicationController
     @meeting = Meeting.new(meeting_params)
     @meeting.loser = current_user
     # @meeting.user = User.find(params)
-    # @meeting.item = Item.find(params)
+    @meeting.item = Item.find(params[:item_id])
     authorize @meeting
     if @meeting.save
       redirect_to meeting_path(@meeting)
@@ -31,11 +31,19 @@ class MeetingsController < ApplicationController
     @meeting.update(meeting_params)
   end
 
-  def destroy
-    @meeting.loser = current_user
-    authorize @meeting
-    @meeting.destroy
+  def accept
+
   end
+
+  def decline
+
+  end
+
+  # def destroy
+  #   @meeting.loser = current_user
+  #   authorize @meeting
+  #   @meeting.destroy
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
