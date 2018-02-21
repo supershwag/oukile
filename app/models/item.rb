@@ -10,6 +10,9 @@ class Item < ApplicationRecord
 
   attr_accessor :skip_if_item_creation
 
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
+
   def skip_if_item_creation
     self.id.nil? && !self.category.nil? && !self.date_found.nil? && !self.location.nil?
   end

@@ -11,6 +11,7 @@ public/packs
 public/packs-test
 node_modules
 .byebug_history
+/public/uploads
 /public/packs
 /public/packs-test
 /node_modules
