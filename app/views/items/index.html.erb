@@ -1,4 +1,4 @@
-
+<% if policy(Item).index? %>
 <div class="text-center">
   <h1>Tous nos objets trouvés</h1>
   <p>Vous avez perdu quelque chose ? Quelqu'un l'a peut-être trouvé !</p>
@@ -17,7 +17,7 @@
           </h2>
           <div class="card-description text-left">
           <p> <%= item.category %></p>
-           <p> <%= item.location %> - <%= Date.parse(item.date_found).strftime('%d-%m-%Y') %></p>
+           <p> <%= item.location %> - <%#= Date.parse(item.date_found).strftime('%d-%m-%Y') %></p>
            </div>
         </div>
       </div>
@@ -26,4 +26,4 @@
   </div>
 <%= link_to "Ajouter un objet trouvé", new_item_path, class: "btn btn-primary text-center" %>
 </div>
-
+<% end %>
