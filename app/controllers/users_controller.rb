@@ -10,7 +10,11 @@ def edit
 end
 
 def update
-  current_user.update(user_params)
+  if current_user.update(user_params)
+      redirect_to user_path(current_user)
+    else
+      render :edit
+    end
 end
 
 private
