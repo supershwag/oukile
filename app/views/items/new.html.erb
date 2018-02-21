@@ -1,11 +1,11 @@
 <div class="container">
   <div class="form-group">
     <div class="row">
-      <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="col-xs-12 col-sm-4 col-sm-offset-4 new">
         <%= simple_form_for [@item] do |f| %>
           <%= f.input :category, label: "Catégorie de l'objet trouvé", collection: @category, error: "Merci de préciser la catégorie de l'objet" %>
-          <%= f.input :location, label: "Adresse où l'objet a été trouvé", error: "Merci de préciser dans quelle ville l'objet a été trouvé" %>
-          <%= f.input :date_found, label: "Date à laquelle l'objet a été trouvé", error: "Merci de préciser la date à laquelle l'objet a été trouvé", input_html: {type: :date, value: Time.now.strftime('%d-%m-%Y')} %>
+          <%= f.input :location, label: "Adresse où l'objet a été trouvé", error: "Merci de préciser où l'objet a été trouvé" %>
+          <%= f.input :date_found, label: "Date à laquelle l'objet a été trouvé", error: "Merci de préciser la date à laquelle l'objet a été trouvé", input_html: {type: :date} %>
           <%= f.submit "J'ai trouvé!", class: "btn btn-primary" %>
         <% end %>
       </div>

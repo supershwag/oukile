@@ -17,8 +17,8 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @category = ["Bijoux", "Électronique", "Papiers d'identité", "Peluche", "Vêtements",  "Divers"]
     @item = Item.new
+    @category = ["Bijoux", "Électronique", "Papiers d'identité", "Peluche", "Vêtements",  "Divers"]
     authorize @item
   end
 
