@@ -4,14 +4,15 @@
     <div class="buttons">
       <button type="button" id="set-meeting" class="btn btn-primary">Meeting</button>
       <% @dispos.each do |dispo| %>
-      <li>
+      <br>
         <%= dispo.start_date %>
+        <br>
         <%= dispo.end_date %>
-      </li>
+        <br>
       <% end %>
       <br>
       <% if policy(@item).update? %>
-      <%= link_to "Ajouter des disponibilités pour rendre l'objet", new_item_dispo_path(@item) %>
+      <%= link_to "Ajouter des disponibilités pour rendre l'objet", new_item_dispo_path(@item), class: "btn btn-success" %>
       <% end %>
       <br>
       <%= link_to "Retourner à la liste", items_path, class: "btn btn-success" %>

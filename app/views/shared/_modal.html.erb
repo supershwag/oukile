@@ -3,10 +3,9 @@
   <div class="modal-content">
     <span class="close">&times;</span>
     <% @dispos.each do |dispo| %>
-            <li>
               <%= dispo.start_date %>
+              <br>
               <%= dispo.end_date%>
-           </li>
           <% end %>
   </div>
 </div>
