@@ -1,13 +1,13 @@
 //= require rails-ujs
 //= require_tree .
 
-const modal = document.getElementById('myModal');
+var modal = document.getElementById('myModal');
 
 // Get the button that opens the modal
-const btn = document.getElementById("set-meeting");
+var btn = document.getElementById("set-meeting");
 
 // Get the <span> element that closes the modal
-const span = document.getElementsByClassName("close")[0];
+var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal
 btn.onclick = function() {
