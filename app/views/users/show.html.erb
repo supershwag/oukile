@@ -1,6 +1,6 @@
 <div class="container">
 
-    <%= image_tag("default.jpg") %>
+   <%= cl_image_tag current_user.photo, height: 300, width: 400, crop: :fill %>
    <li><%= current_user.first_name %></li>
    <li><%= current_user.last_name %></li>
    <li><%= current_user.email %></li>
