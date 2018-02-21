@@ -1,18 +1,15 @@
 class UserPolicy < ApplicationPolicy
 
   def show?
-    # record.user == user
     true
   end
 
   def edit?
-    # record.user == user
-    true
+    record.user == user
   end
 
   def update?
-    # record.user == user
-    true
+    edit?
   end
 
   class Scope < Scope

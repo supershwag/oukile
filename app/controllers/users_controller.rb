@@ -12,16 +12,13 @@ def edit
 end
 
 def update
-<<<<<<< HEAD
+  @user = current_user
+  authorize @user
   if current_user.update(user_params)
       redirect_to user_path(current_user)
     else
       render :edit
     end
-=======
-  current_user.update(user_params)
-  authorize @user
->>>>>>> master
 end
 
 private
