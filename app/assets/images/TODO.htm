@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://localhost:3000/items/12/edit -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>TODO</title>
+    <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="IZhbXl3WsxkSzJvSmYQJLjGwXGtaC6qXenFAqU69l7zFwDFIkbqUYxvELHovDHv8vnOB8ucuQWSW4UxaMkQyCw==">
+    <meta name="action-cable-url" content="/cable">
+    <link rel="stylesheet" media="all" href="./TODO_files/application-c77a008f144bb0bfe069b2f35f4a3913f4526f6cb56a23557ba5975075aa0a23.css">
+ <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+  </head>
+  <body cz-shortcut-listen="true">
+    <div class="navbar-wagon">
+  <!-- Logo -->
+  <a class="navbar-wagon-brand" href="http://localhost:3000/">
+    <img height="50" src="./TODO_files/logo-7503965f57527ed84af8d8e378fbd4eac363d7c2957087df25708a271702bb5f.png" alt="Logo">
+</a>
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+
+      <!-- Links when logged in -->
+      <a class="navbar-wagon-item navbar-wagon-link" href="http://localhost:3000/items/12/edit#">Host</a>
+      <a class="navbar-wagon-item navbar-wagon-link" href="http://localhost:3000/items/12/edit#">Trips</a>
+      <a class="navbar-wagon-item navbar-wagon-link" href="http://localhost:3000/items/12/edit#">Messages</a>
+
+      <!-- Avatar with dropdown menu -->
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <img class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown" src="./TODO_files/supershwag" alt="Supershwag">
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li>
+              <a href="http://localhost:3000/items/12/edit#">
+                <i class="fa fa-user"></i> Profile
+</a>            </li>
+            <li>
+              <a href="http://localhost:3000/items/12/edit#">
+                <i class="fa fa-cog"></i>  Settings
+</a>            </li>
+            <li>
+              <a rel="nofollow" data-method="delete" href="http://localhost:3000/users/sign_out">
+              <i class="fa fa-sign-out"></i>  Log out
+</a>            </li>
+          </ul>
+        </div>
+      </div>
+  </div>
+
+  <!-- Dropdown list appearing on mobile only -->
+  <div class="navbar-wagon-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li><a href="http://localhost:3000/items/12/edit#">Some mobile link</a></li>
+        <li><a href="http://localhost:3000/items/12/edit#">Other one</a></li>
+        <li><a href="http://localhost:3000/items/12/edit#">Other one</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+    
+    <p class="notice"></p>
+<!--     <p class="alert"></p>
+ -->    <div class="container">
+  <form novalidate="novalidate" class="simple_form edit_item" id="edit_item_12" action="http://localhost:3000/items/12" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="patch"><input type="hidden" name="authenticity_token" value="IZhbXl3WsxkSzJvSmYQJLjGwXGtaC6qXenFAqU69l7zFwDFIkbqUYxvELHovDHv8vnOB8ucuQWSW4UxaMkQyCw==">
+    <div class="form-group string required item_name"><label class="control-label string required" for="item_name"><abbr title="required">*</abbr> Type d'objet</label><input class="form-control string required" required="required" aria-required="true" type="text" value="doucou" name="item[name]" id="item_name"></div>
+    <div class="form-group hidden item_category"><input class="form-control hidden" required="required" aria-required="true" type="hidden" value="papiers" name="item[category]" id="item_category"></div>
+    <div class="form-group string optional item_description"><label class="control-label string optional" for="item_description">Description de l'objet</label><input class="form-control string optional" placeholder="Un doudou bleu et rouge..." type="text" value="" name="item[description]" id="item_description"></div>
+    <div class="form-group hidden item_date_found"><label class="control-label hidden" for="item_date_found"><abbr title="required">*</abbr> Date à laquelle l'objet a été trouvé</label><input class="form-control hidden" required="required" aria-required="true" type="hidden" value="2018-02-08" name="item[date_found]" id="item_date_found"></div>
+    <div class="form-group hidden item_location"><label class="control-label hidden" for="item_location"><abbr title="required">*</abbr> Ville où l'objet a été trouvé</label><input class="form-control hidden" required="required" aria-required="true" type="hidden" value="dsqdq" name="item[location]" id="item_location"></div>
+    <div class="form-group string optional item_location_detailed"><label class="control-label string optional" for="item_location_detailed">Endroit précis où l'objet a été trouvé</label><input class="form-control string optional" placeholder="Dans le train 4687 en provenance Paris, dans le bus 82..." type="text" name="item[location_detailed]" id="item_location_detailed"></div>
+    <div class="form-group string required item_photo_id"><label class="control-label string required" for="item_photo_id"><abbr title="required">*</abbr> Photo de l'objet</label><input class="form-control string required" required="required" aria-required="true" type="text" value="dqs" name="item[photo_id]" id="item_photo_id"></div>
+    <div class="form-group string optional item_reward"><label class="control-label string optional" for="item_reward">Récompense proposée</label><input class="form-control string optional" placeholder="une bière, une image de Céline Dion..." type="text" value="" name="item[reward]" id="item_reward"></div>
+    <input type="submit" name="commit" value="Mettre en ligne l&#39;objet trouvé" class="btn btn-primary" data-disable-with="Mettre en ligne l&#39;objet trouvé">
+</form></div>
+  <h2>
+  <a href="http://localhost:3000/items">Retour à la liste des objets trouvés</a>
+  </h2>
+
+    <script src="./TODO_files/application-0bf6879156671ef1a5a16518ab1db3b04d3b1b5c2b5947f9f7439d0b52599816.js"></script>
+    <script src="./TODO_files/application-8ed494e6ceb66b29d5e0.js"></script>
+  
+
+</body></html>
