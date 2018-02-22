@@ -1,13 +1,15 @@
 <div class="item-show">
   <div class="item-show-photo">
     <%= cl_image_tag @item.photo, height: 300, width: 400, crop: :fill %>
+
     <div class="buttons">
 <!--       <button type="button" id="set-meeting" class="btn btn-primary">Meeting</button> -->
+      <p>Disponibilité du trouveur</p>
       <% @dispos.each do |dispo| %>
       <br>
-        <%= dispo.start_date %>
+        du <%= dispo.start_date %>
         <br>
-        <%= dispo.end_date %>
+        <%#= dispo.end_date %>
         <br>
       <% end %>
       <br>
@@ -42,7 +44,7 @@
     <%= @item.description %>
     <br>
     <h3>Date où l'objet a été trouvé</h3>
-    <%= Date.parse(@item.date_found).strftime('%d %B %Y') %>
+    <%= l(Date.parse(@item.date_found), format: :long) %>
     <br>
     <h3>Lieu</h3>
     <p><%= @item.location %></p>

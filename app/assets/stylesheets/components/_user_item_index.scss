@@ -1,0 +1,9 @@
+.items-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  .card {
+    flex: 0 0 31%;
+    margin: 0 5px 10px !important;
+  }
+}
