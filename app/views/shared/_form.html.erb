@@ -13,7 +13,7 @@
             <%= f.input :date_found, label: "Date à laquelle l'objet a été trouvé", error: "Merci de préciser la date à laquelle l'objet a été trouvé", input_html: {type: :date, class: "datepicker"} %>
             <%= f.input :photo %>
             <%= f.input :photo_cache, as: :hidden %>
-            <%= f.input :start_date, label: "Début des disponibilités", error: "Merci de donner vos disponibilités", input_html: {type: :date, value: Time.now.strftime('%d-%m-%Y'), class: "range"} %>
+            <%= f.input :start_date, label: "Disponibilités", error: "Merci de donner vos disponibilités", input_html: {type: :date, value: Time.now.strftime('%d-%m-%Y'), class: "range"} %>
             <%#= f.input :end_date, label: "Fin des disponibilités", error: "Merci de préciser la fin de vos disponibilités", input_html: {type: :date, value: Time.now.strftime('%d-%m-%Y'), class: "range"} %>
             <%= f.submit "Mettre en ligne l'objet trouvé", class: "btn btn-primary" %>
           <% end %>
