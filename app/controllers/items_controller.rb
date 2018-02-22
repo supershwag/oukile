@@ -19,23 +19,27 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @category = ["Bijoux", "Électronique", "Papiers d'identité", "Peluche", "Vêtements",  "Divers"]
+    @dispo = Dispo.new
+    # @item.dispos = @dispo
     authorize @item
+    authorize @dispo
   end
 
   def create
+    @dispo = Dispo.new(dispo_params)
     @item = Item.new(item_params)
+    @item.dispos << @dispo
     @item.finder = current_user
     authorize @item
+    authorize @dispo
     if @item.save
-      redirect_to edit_item_path(@item)
+      redirect_to item_path(@item)
     else
       render :new
     end
   end
 
   def edit
-    @category = ["Bijoux", "Électronique", "Papiers d'identité", "Peluche", "Vêtements",  "Divers"]
     @item = Item.find(params[:id])
     @item.finder = current_user
     authorize @item
@@ -63,6 +67,10 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :category, :description, :date_found, :location, :location_details, :photo, :reward, :start_date, :end_date)
+    params.require(:item).permit(:name, :category, :description, :date_found, :location, :location_detailed, :photo, :reward)
+  end
+
+  def dispo_params
+    params.require(:item).permit(:start_date, :end_date)
   end
 end
