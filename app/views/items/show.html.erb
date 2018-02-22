@@ -2,7 +2,7 @@
   <div class="item-show-photo">
     <%= cl_image_tag @item.photo, height: 300, width: 400, crop: :fill %>
     <div class="buttons">
-      <button type="button" id="set-meeting" class="btn btn-primary">Meeting</button>
+<!--       <button type="button" id="set-meeting" class="btn btn-primary">Meeting</button> -->
       <% @dispos.each do |dispo| %>
       <br>
         <%= dispo.start_date %>
@@ -35,13 +35,13 @@
     <h3>Nom</h3>
     <%= @item.name %>
     <br>
-    <h3>Categorie</h3>
+    <h3>Catégorie</h3>
     <%= @item.category %>
     <br>
     <h3>Description</h3>
     <%= @item.description %>
     <br>
-    <h3>Date Trouvé</h3>
+    <h3>Date où l'objet a été trouvé</h3>
     <%= Date.parse(@item.date_found).strftime('%d-%m-%Y') %>
     <br>
     <h3>Lieu</h3>
