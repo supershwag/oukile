@@ -3,13 +3,13 @@
   <div class="modal-content">
     <span class="close">&times;</span>
     <div class="container">
+    <%= cl_image_tag @item.finder.photo, height: 300, width: 400, crop: :fill, class: "avatar-meeting-modal" %>
+    <%= @item.user_id %>
+    <h3>Meeting</h3>
     <% @dispos.each do |dispo| %>
-              <%= dispo.start_date %>
-              <br>
-              <%= dispo.end_date %>
+              <%= dispo.start_date %> | <%= @item.location %>
           <% end %>
           <br>
-    <%= link_to "Accépter le meeting", accept_meeting_path, class: "btn btn-primary" %>
       </div>
   </div>
 </div>
