@@ -5,55 +5,14 @@
     <!--= image_tag "logo.png", height: 50 % -->
   <% end %>
 
-  <!-- Search Bar -->
-  <div class = "search-bar">
-    <i class="fas fa-search" id = "search-magnifier"> </i>
-      <form class="form-inline" id = "search-form">
-        <%= form_tag items_path, method: :get do %>
-          <div class="form-group" id = "search-form">
-            <%= select_tag :category,
-              options_for_select(["Bijoux", "Électronique", "Papiers d'identité", "Peluche", "Vêtements",  "Divers"], params[:category]),
-              include_blank: "Catégorie",
-              class: "form-control"
-            %>
-          </div >
-          <!-- div class="form-group">
-            <%= text_field_tag :name,
-              params[:name],
-              class: "form-control"
-            %>
-          </div> -->
-          <div class="form-group" id = "search-form">
-            <%= text_field_tag :location,
-              params[:location],
-              class: "form-control",
-              id: "item_location",
-              placeholder: "Où avez-vous perdu cet objet?"
-            %>
-          </div>
-          <div class="form-group" id = "search-form" >
-            <%= text_field_tag :date,
-              params[:date],
-              class: "form-control",
-              placeholder: "Quand avez-vous perdu cet objet?",
-              input_html: {type: :date}
-            %>
-          </div>
-        <% end %>
-      </form>
-    <div class = "btn btn-info", style = "padding: 5px !important"> Trouver mon objet! </div>
-  </div>
-
-
-
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <% if user_signed_in? %>
       <!-- Links when logged in -->
-      <%= link_to "Retourner à la liste des objets", items_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Ajouter un objet trouvé", new_item_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Mes messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Retourner à la liste des objets", items_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Ajouter un objet trouvé", new_item_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Mes messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
