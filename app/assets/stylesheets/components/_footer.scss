@@ -5,17 +5,16 @@
   justify-content: space-between;
   height: 80px;
   padding: 0px 50px;
-  color: $orange;
-  // position: absolute;
-  // bottom: 0px;
-  // width: 100vw;
+  color: $gray;
+  position: relative;
+  top: 10vh;
 }
 .footer-links {
   display: flex;
   align-items: center;
 }
 .footer-links a {
-  color: black;
+  color: $gray;
   opacity: 0.15;
   text-decoration: none;
   font-size: 24px;
@@ -25,7 +24,7 @@
   opacity: 1;
 }
 .footer .fa-heart {
-  color: #D23333;
+  color: #ffa200;
 }
 
 .footer-phrase{
