@@ -22,6 +22,8 @@ gem 'devise'
 
 gem "geocoder"
 
+gem 'rails-i18n', '5.0.3'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

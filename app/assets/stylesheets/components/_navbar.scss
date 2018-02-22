@@ -75,3 +75,33 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+.search-bar {
+  display: flex;
+  position: relative;
+  left: 100px;
+  height: 60px;
+  color: $gray;
+  hover: $blue;
+  border: 2px solid $light-gray;
+  font-size: 16px;
+  hover: $light-gray;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 10px;
+  background: $white;
+  border-radius: 10px;
+  padding: 0px 10px 0px 20px;
+  font-size: 16px;
+}
+.selection {
+  border: none;
+  background: $white;
+}
+#search-form {
+  margin: 5px;
+}
+#search-magnifier {
+  color: $light-gray !important;
+  font-size: 20px;
+}

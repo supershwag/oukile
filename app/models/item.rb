@@ -8,6 +8,7 @@ class Item < ApplicationRecord
   validates :date_found, presence: true
   validates :location, presence: true
   validates :name, presence: true, unless: :skip_if_item_creation
+  validates :photo, presence: true
 
   attr_accessor :skip_if_item_creation
 
