@@ -3,6 +3,11 @@ skip_after_action :verify_authorized
 
 def show
   @user = current_user
+  @items = Item.all
+  @user_items = @items.each do |item|
+    if item.user = current_user
+      @user_items << item
+    end
   authorize @user
 end
 

@@ -5,7 +5,7 @@
   <div class="user-left-side-profile">
     <%= cl_image_tag current_user.photo, height: 200, width: 200, crop: :fill, class: "user-show-photo" %>
       <div class="buttons">
-        <%= link_to "Mettre à jour", edit_user_path(current_user), class: "btn btn-primary" %>
+
       </div>
   </div>
    <div class="user-details">
@@ -23,9 +23,10 @@
     <div class="user-show-details" data-section="about">
       <p><%= current_user.first_name %> <%= current_user.last_name %></p>
       <p><%= current_user.email %></p>
+      <%= link_to "Mettre à jour", edit_user_path(current_user), class: "user-button" %>
     </div>
     <div class="user-show-details hidden" data-section="items">
-      <p>items</p>
+      <p>items <%= @user_items %></p>
     </div>
     <div class="user-show-details hidden" data-section="meetings">
       <p>meetings</p>
