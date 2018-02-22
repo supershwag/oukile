@@ -3,36 +3,32 @@
 
 <div class="user-show">
   <div class="user-left-side-profile">
-    <%= cl_image_tag current_user.photo, height: 300, width: 300, crop: :fill, class: "user-show-photo" %>
+    <%= cl_image_tag current_user.photo, height: 200, width: 200, crop: :fill, class: "user-show-photo" %>
       <div class="buttons">
         <%= link_to "Mettre à jour", edit_user_path(current_user), class: "btn btn-primary" %>
-        <br>
-        <%= link_to "Mes meetings", meeting_path(current_user), class: "btn btn-primary" %>
-        <br>
-        <%= link_to "J'ai trouvé!", new_item_path, class: "btn btn-primary" %>
-        <br>
       </div>
   </div>
    <div class="user-details">
     <div class="tabs">
-      <a class="tab active" href="#">
+      <div class="tab active" data-section="about">
         <h3>About</h3>
-      </a>
-      <a class="tab" href="#">
-        <h3>Objects</h3>
-      </a>
-      <a class="tab" href="#">
-        <h3>Meetings</h3>
-      </a>
+      </div>
+      <div class="tab" data-section="items">
+        <h3>Items</h3>
+      </div>
+      <div class="tab" data-section="meetings">
+        <h3>Meeting</h3>
+      </div>
     </div>
-
-    <div class="user-show-details">
-      <h3>Nom</h3>
-      <%= current_user.first_name %>
-      <h3>Nom de Famille</h3>
-      <%= current_user.last_name %>
-      <h3>Email</h3>
-      <%= current_user.email %>
+    <div class="user-show-details" data-section="about">
+      <p><%= current_user.first_name %> <%= current_user.last_name %></p>
+      <p><%= current_user.email %></p>
+    </div>
+    <div class="user-show-details hidden" data-section="items">
+      <p>items</p>
+    </div>
+    <div class="user-show-details hidden" data-section="meetings">
+      <p>meetings</p>
     </div>
   </div>
 </div>

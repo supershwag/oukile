@@ -3,6 +3,7 @@
   padding-top: 30px;
   width: 90%;
   padding-left: 30px;
+  min-height: calc(100vh - 70px);
 }
 
 .user-show-photo {
@@ -11,6 +12,14 @@
   border-radius: 50%;
 }
 
+.user-details {
+  padding-left: 70px;
+}
+
+.user-show-details p {
+  font-size: 15px;
+}
+
 .user-show-details {
-  padding-left: 60px;
+  padding-top: 25px;
 }
