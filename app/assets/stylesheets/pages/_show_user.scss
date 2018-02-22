@@ -1,19 +1,26 @@
 .user-show {
   display: flex;
-  padding-top: 30px;
-  width: 90%;
-  padding-left: 30px;
+  align-items: flex-start;
+  padding: 30px 40px;
+  // padding-top: 30px;
+  // width: 90%;
+  // padding-left: 30px;
   min-height: calc(100vh - 70px);
+}
+.user-left-side-profile {
+  flex: 0 0 20%;
+  margin-right: 10px;
+}
+
+.user-details {
+  flex: 1 1 auto;
+  // padding-left: 70px;
 }
 
 .user-show-photo {
   top: 30px;
   left: 10px;
   border-radius: 50%;
-}
-
-.user-details {
-  padding-left: 70px;
 }
 
 .user-show-details p {

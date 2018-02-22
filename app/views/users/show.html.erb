@@ -1,6 +1,4 @@
 
-
-
 <div class="user-show">
   <div class="user-left-side-profile">
     <%= cl_image_tag current_user.photo, height: 200, width: 200, crop: :fill, class: "user-show-photo" %>
@@ -26,10 +24,10 @@
       <%= link_to "Mettre à jour", edit_user_path(current_user), class: "user-button" %>
     </div>
     <div class="user-show-details hidden" data-section="items">
-      <p>items <%= @user_items %></p>
+      <%= render 'shared/user_item_index' %>
     </div>
     <div class="user-show-details hidden" data-section="meetings">
-      <p>meetings</p>
+      <%= render 'shared/user_meetings' %>
     </div>
   </div>
 </div>
