@@ -10,6 +10,14 @@ def show
     item.finder = current_user
       @user_items << item
     end
+  # Meetings in user profile
+  @meetings = Meeting.all
+  @user_meetings = []
+  @meetings.each do |meeting|
+    meeting.finder || meeting.loser = current_user
+    @user_meetings << meeting
+  end
+
   authorize @user
 end
 

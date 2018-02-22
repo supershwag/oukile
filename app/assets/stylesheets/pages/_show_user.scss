@@ -17,6 +17,10 @@
   // padding-left: 70px;
 }
 
+.user-profile-name h3 {
+  font-size: 20px;
+}
+
 .user-show-photo {
   top: 30px;
   left: 10px;
@@ -25,17 +29,22 @@
 
 .user-show-details p {
   font-size: 15px;
-  padding-bottom: 20px;
+}
+
+.user-button {
+  margin-top: 15px;
 }
 
 .user-show-details {
   padding-top: 25px;
+  padding-bottom:25px;
 }
 
-.user-button {
+.user-edit-button {
   color: #999999;
   border: 1px solid #999999;
   padding: 10px 15px;
+  margin-top: 20px;
   border-radius: 50px;
   font-weight: lighter;
   opacity: 0.6;
