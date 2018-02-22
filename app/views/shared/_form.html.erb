@@ -1,11 +1,19 @@
 
 <% if policy(Item).new? %>
+
+<%#= select_tag "timezone", options_from_collection_for_select(
+      ActiveSupport::TimeZone.all.
+        map { |tz| tz.tzinfo }.
+        sort_by { |tzinfo| tzinfo.name },
+      :name, :name),
+      class: 'select2' %>
+
   <div class="container">
     <div class="form-group">
       <div class="row">
         <div class="col-xs-12 col-sm-4 col-sm-offset-4 new">
           <%= simple_form_for @item do |f| %>
-            <%= f.input :category, label: "Catégorie de l'objet trouvé", collection: Item::CATEGORIES, error: "Merci de préciser la catégorie de l'objet" %>
+            <%= f.input :category, label: "Catégorie de l'objet trouvé", collection: Item::CATEGORIES, error: "Merci de préciser la catégorie de l'objet", id: "dropdown" %>
             <%= f.input :name, label: "Type d'objet", error: "Merci de préciser le type d'objet", required: true, include_blank: false %>
             <%= f.input :description, label: "Description de l'objet", error: "Merci de décrire précisément l'objet", placeholder: "Un doudou bleu et rouge..."%>
             <%= f.input :location, label: "Adresse où l'objet a été trouvé", error: "Merci de préciser où l'objet a été trouvé" %>
