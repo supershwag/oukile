@@ -1,15 +1,18 @@
-<div class="text-center">
-  <h1>Tous nos objets trouvés</h1>
-  <p>Vous avez perdu quelque chose ? Quelqu'un l'a peut-être trouvé !</p>
+<div class = "container" id="filters-container">
+  <h2 style="font-size: 20px">Tous les objets trouvés</h2>
+ <!--  <div class = "btn btn-primary"> Category </div>
+  <div class = "btn btn-warning"> Location </div>
+  <div class = "btn btn-danger"> Date found </div> -->
 </div>
 
 <div class="content">
-  <div class="container">
+  <div class="container" id = "search-results">
+    <h4> <%= @items.length %> résultat(s) trouvé</h4>
     <div class="row">
       <% @items.each do |item| %>
         <% url = image_path('default.jpg') %>
-        <div class="col-xs-12 col-sm-3">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path item.photo, height: 300, width: 400, crop: :fill %>')">
+        <div class="col-xs-12 col-sm-3 col-md-4">
+          <div class="card" id="search-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path item.photo, height: 300, width: 400, crop: :fill %>')">
             <div class="card-header">
               <h2 class="card-category">
                 <%= link_to item.name, item_path(item) %>
@@ -23,7 +26,6 @@
         </div>
       <% end %>
     </div>
-    <%= link_to "Ajouter un objet trouvé", new_item_path, class: "btn btn-primary text-center" %>
   </div>
 
   <div
@@ -33,4 +35,3 @@
     data-markers="<%= @markers.to_json %>"
   ></div>
 </div>
-
