@@ -36,9 +36,9 @@ ActiveRecord::Schema.define(version: 20180221125211) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "photo"
     t.float "latitude"
     t.float "longitude"
+    t.string "photo"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 20180221125211) do
     t.string "last_name"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "phone_number"
+    t.integer "phone_number"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
