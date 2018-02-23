@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
+    <h1 class="logo"> OuKiLélé.</h1>
   <% end %>
 
   <!-- Right Navigation -->
@@ -9,8 +9,8 @@
 
     <% if user_signed_in? %>
       <!-- Links when logged in -->
-      <%= link_to "Retourner à la liste des objets", items_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Ajouter un objet trouvé", new_item_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Tous les objets trouvés", items_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Ajouter un objet trouvé", new_item_path, class: "navbar-wagon-item navbar-wagon-link btn_hp" %>
       <%= link_to "Mes messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
@@ -52,4 +52,5 @@
     </div>
   </div>
 </div>
+
 

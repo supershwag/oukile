@@ -1,8 +1,16 @@
 class ItemsController < ApplicationController
   def index
     @items = policy_scope(Item).order(created_at: :desc)
-    @items = Item.where.not(latitude: nil, longitude: nil)
-
+    @items = @items.where("lower(category) LIKE ?",params[:query_category].downcase) if params[:query_category].present?
+    @items = @items.near(params[:query_location], 10) if params[:query_location].present?
+    # @items = @items.where("lower(category) LIKE ?",params[:query_category]) if params[:query_category].present?
+    # if params[:query_category].present?
+    #   @items = @items.where("lower(category) LIKE","%#{params[:query_category]}%")
+    # else
+    #   @items = policy_scope(Item).order(created_at: :desc)
+    #   @items = Item.where.not(latitude: nil, longitude: nil)
+    # end
+    @items = @items.where.not(latitude: nil, longitude: nil)
     @markers = @items.map do |item|
       {
         lat: item.latitude,

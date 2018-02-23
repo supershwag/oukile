@@ -12,6 +12,12 @@
   backface-visibility: hidden;
   perspective: 300;
 }
+#search-card {
+  height: 200px;
+  transform: none;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 card figure {
   margin: 0;
   display: block;
@@ -55,10 +61,10 @@ card figure {
 .card:hover {
     transform:rotateY(180deg);
   }
-.row {
+/*.row {
   margin-top: 50px;
   margin-bottom: 50px;
-}
+}*/
 .card a {
   text-decoration: none;
   color: $gray;
@@ -79,4 +85,5 @@ card figure {
   backface-visibility: hidden;
   position: relative;
   bottom: 50px;
+  line-height: 15px;
   }

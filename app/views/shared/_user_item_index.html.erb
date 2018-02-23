@@ -1,13 +1,13 @@
 <div class="items-content">
   <% @user_items.each do |item| %>
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path item.photo, height: 300, width: 400, crop: :fill %>')">
+    <%= cl_image_tag item.photo, height: 200, width: 200, crop: :fill, class: "user-show-photo" %>
     <div class="card-header">
       <h2 class="card-category">
         <%= link_to item.name, item_path(item) %>
       </h2>
       <div class="card-description text-left">
         <p> <%= item.category %></p>
-        <p> <%= item.location %> - <%= Date.parse(item.date_found).strftime('%d-%m-%Y') %></p>
+        <p> <%= item.location %> - <%= item.date_found %></p>
       </div>
     </div>
   </div>
