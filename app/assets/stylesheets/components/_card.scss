@@ -1,13 +1,10 @@
 .card {
   height: 200px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  background-position: center;
-  color: white;
-  position: relative;
-  margin: 10px;
-  width: 300px;
-  border-radius: 2px;
+  transform: none;
+  margin-top: 5px;
+  margin-bottom: 0px;
 }
+
 .card-user {
   position: absolute;
   right: 10px;
@@ -21,7 +18,7 @@
   border-radius: 5px;
   border-radius: 5px;
   align-items: center;
-  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5));
+  // background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5));
 }
 .card-category {
   position: absolute;
