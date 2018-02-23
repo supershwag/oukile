@@ -6,8 +6,10 @@
   height: 80px;
   padding: 0px 50px;
   color: $gray;
-  position: relative;
-  top: 10vh;
+  position: fixed;
+  bottom: 0;
+  // top: 10vh;
+  width: 100%;
 }
 .footer-links {
   display: flex;
@@ -31,3 +33,4 @@
   display:flex;
   justify-content: space-around;
 }
+
