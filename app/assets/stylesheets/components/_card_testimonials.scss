@@ -2,7 +2,7 @@
 .container {
   display: flex;
   justify-content: space-around;
-  height:500px;
+  height:550px;
 }
 
 .img-avatar{
@@ -118,13 +118,13 @@ body, .text-light-black {
 .styled-link {
   text-decoration: none;
   outline: none;
-  color: #2196fe;
+  color: #FFA300;
   transition: all 0.25s ease-in;
 }
 .styled-link:hover,
 .styled-link:focus,
 .styled-link:active {
-  color: #536dfe;
+  color: #FFA300;
 }
 .shadow-1 {
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.15);
@@ -136,7 +136,7 @@ body, .text-light-black {
 .blue-hover:hover {
   transform: translateY(-5px);
   border: none;
-  border-bottom: 5px solid #2196fe;
+  border-bottom: 5px solid #FFA300;
 }
 
 

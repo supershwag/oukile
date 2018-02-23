@@ -1,33 +1,26 @@
 
 <% if policy(Item).new? %>
 
-<%#= select_tag "timezone", options_from_collection_for_select(
-      ActiveSupport::TimeZone.all.
-        map { |tz| tz.tzinfo }.
-        sort_by { |tzinfo| tzinfo.name },
-      :name, :name),
-      class: 'select2' %>
-
-  <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-6 col-sm-offset-3 new">
+  <div class="form-container">
+<!--       <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2 new"> -->
           <div class="new_form">
-          <h1> Détails de votre objet trouvé</h1>
+<!--           <h1> Détails de votre objet trouvé</h1> -->
           <%= simple_form_for @item do |f| %>
-            <%= f.input :category, label: "Catégorie de l'objet trouvé", collection: Item::CATEGORIES, error: "Merci de préciser la catégorie de l'objet", id: "dropdown" %>
-            <%= f.input :name, label: "Type d'objet", error: "Merci de préciser le type d'objet", required: true, include_blank: false %>
-            <%= f.input :description, label: "Description de l'objet", error: "Merci de décrire précisément l'objet", placeholder: "Un doudou bleu et rouge..."%>
+            <%= f.input :category, label: "Catégorie de l'objet trouvé", collection: Item::CATEGORIES, error: "Merci de préciser la catégorie de l'objet", class: "select2",selected: 1 %>
+            <%= f.input :name, label: "Nom de l'objet", error: "Merci de préciser le type d'objet", required: true, include_blank: false, placeholder: "Un lapinou" %>
+            <%= f.input :description, label: "Plus de précisions sur l'objet", error: "Merci de décrire précisément l'objet", placeholder: "Un doudou bleu et rouge..."%>
             <%= f.input :location, label: "Adresse où l'objet a été trouvé", error: "Merci de préciser où l'objet a été trouvé" %>
-            <%= f.input :location_detailed, label: "Endroit précis où l'objet a été trouvé", error: "Merci de préciser l'endroit où l'objet a été trouvé", placeholder: "Dans le train 4687 en provenance Paris, dans le bus 82..." %>
+            <%#= f.input :location_detailed, label: "Endroit précis où l'objet a été trouvé", error: "Merci de préciser l'endroit où l'objet a été trouvé", placeholder: "Dans le train 4687 en provenance Paris, dans le bus 82..." %>
             <%= f.input :date_found, label: "Date à laquelle l'objet a été trouvé", error: "Merci de préciser la date à laquelle l'objet a été trouvé", input_html: {type: :date, class: "datepicker"} %>
             <%= f.input :photo %>
             <%= f.input :photo_cache, as: :hidden %>
-            <%= f.input :start_date, label: "Disponibilités", error: "Merci de donner vos disponibilités", input_html: {type: :date, value: Time.now.strftime('%d-%m-%Y'), class: "range"} %>
+            <%= f.input :start_date, label: "Quand êtes-vous disponible pour rendre cet objet?", error: "Merci de donner vos disponibilités", input_html: {type: :date, value: Time.now.strftime('%d-%m-%Y'), class: "range"} %>
             <%#= f.input :end_date, label: "Fin des disponibilités", error: "Merci de préciser la fin de vos disponibilités", input_html: {type: :date, value: Time.now.strftime('%d-%m-%Y'), class: "range"} %>
-            <%= f.submit "Mettre en ligne l'objet trouvé", class: "btn btn-primary" %>
+            <%= f.submit "Mettre en ligne l'objet trouvé", class: "btn btn-info" %>
           <% end %>
         </div>
-      </div>
-    </div>
+<!--       </div>
+    </div> -->
   </div>
 <% end %>
