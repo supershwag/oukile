@@ -9,8 +9,6 @@ class MeetingsController < ApplicationController
   def create
     @meeting = Meeting.new(meeting_params)
     @meeting.loser = current_user
-    # @meeting.user = User.find(params)
-    @meeting.item = Item.find(params[:item_id])
     authorize @meeting
     if @meeting.save
       redirect_to meeting_path(@meeting)
@@ -33,7 +31,6 @@ class MeetingsController < ApplicationController
 
   def accept
     @meeting.item.loser = current_user
-
     redirect_to user_path(current_user)
   end
 
@@ -50,12 +47,11 @@ class MeetingsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_meeting
-      @meeting = Meeting.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meeting_params
-      params.require(:meeting).permit(:user, :item, :loser, :start_date, :end_date)
+      params.require(:meeting).permit(:dispo)
     end
   end
 

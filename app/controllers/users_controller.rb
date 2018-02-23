@@ -7,9 +7,7 @@ def show
   @items = Item.all
   @user_items = []
   @items.each do |item|
-    if item.finder = current_user
-      @user_items << item
-    end
+    @user_items << item if item.finder = current_user
   end
   # Meetings in user profile
   @meetings = Meeting.all
