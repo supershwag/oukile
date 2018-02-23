@@ -1,13 +1,17 @@
 import swal from 'sweetalert';
-
 function bindSweetAlertButtonDemo() {
-  document.getElementById('.sweet-alert-button').addEventListener('click', () => {
+  const sweetBtns = document.querySelectorAll('.sweet-alert-button');
+  sweetBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
     swal({
-      title: "A nice alert",
-      text: "This is a great alert, isn't it?",
+      title: "Il s'appel revient.",
+      text: "Ton rendez-vous est confirmé!",
       icon: "success"
-    })
+      })
+    });
   });
 }
 
 export { bindSweetAlertButtonDemo };
+
+
