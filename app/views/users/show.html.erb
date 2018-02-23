@@ -9,18 +9,18 @@
   </div>
    <div class="user-details">
     <div class="tabs">
-      <div class="tab active" data-section="items">
-        <h3>Objets</h3>
-      </div>
-      <div class="tab" data-section="meetings">
+      <div class="tab active" data-section="meetings">
         <h3>Meetings</h3>
       </div>
+      <div class="tab" data-section="items">
+        <h3>Objets</h3>
+      </div>
     </div>
-    <div class="user-show-details" data-section="items">
-      <%= render 'shared/user_item_index' %>
-    </div>
-    <div class="user-show-details hidden" data-section="meetings">
+    <div class="user-show-details" data-section="meetings">
       <%= render 'shared/user_meetings' %>
+    </div>
+    <div class="user-show-details hidden" data-section="items">
+      <%= render 'shared/user_item_index' %>
     </div>
   </div>
 </div>

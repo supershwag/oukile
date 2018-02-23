@@ -1,24 +1,32 @@
-<div class="modal myModal" tabindex="-1" role="dialog">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <h3 class="modal-title" id="exampleModalLabel">Retrouves <%= @item.finder.first_name %>!</h3>
       </div>
       <div class="modal-body">
-        <p>Modal body text goes here.</p>
-        <%= cl_image_tag @item.finder.photo, height: 300, width: 400, crop: :fill, class: "avatar-meeting-modal" %>
-        <%= @item.user_id %>
+        <%= cl_image_tag @item.finder.photo, height: 150, width: 150, crop: :fill, class: "avatar-meeting-modal" %>
+        <br>
+        <br>
+        <h4><%= @item.finder.first_name %> est disponible aux dates suivantes:</h4>
         <% @dispos.each do |dispo| %>
-              <%= dispo.start_date %> | <%= @item.location %>
+              <%= dispo.start_date %><%= simple_form_for [@item, Meeting.new] do |f| %>
+              <%= f.input :dispo_id, as: :hidden, input_html: { value: dispo.id } %>
+              <%= f.submit "Accept", class: "btn btn-primary", id: "sweet-alert-button" %>
+              <% end %>
+              <%= dispo.end_date %><%= simple_form_for [@item, Meeting.new] do |f| %>
+              <%= f.input :dispo_id, as: :hidden, input_html: { value: dispo.id } %>
+              <%= f.submit "Accept", class: "btn btn-primary", id: "sweet-alert-button" %>
+              <% end %>
+              <br>
+              <%= @item.location %>
           <% end %>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
+
+

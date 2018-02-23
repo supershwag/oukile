@@ -1,23 +1,38 @@
 .new_form{
   padding: 20px 60px;
-  border-radius: 0px 0px 10px 10px;
+  border-radius: 5px;
   input{
   border-radius: 4px;
   }
   background-color: white;
-  border: solid 1px #F9F9F9;
-  border-top: solid 3px $orange;
-  margin-top: 100px;
+  border: solid 1px #FFA200;
+  border-shadow: 1px;
+  margin-top: 90px;
   h1{
     font-weight: 900;
     font-size: 25px;
     color: $orange;
   }
   .control-label{
-  text-align: left;
-    font-weight: 900;
+    text-align: left;
     font-size: 18px;
     color: $orange;
   }
 }
-
+.devise-form{
+  max-width: 300px;
+  text-decoration: none;
+  a{
+    color: $orange;
+  }
+}
+.devise-form-container{
+  display: flex;
+  justify-content: center;
+  align-item: center;
+}
+.form-container {
+  padding: 0px 400px;
+  height: 700px;
+  background: white;
+}

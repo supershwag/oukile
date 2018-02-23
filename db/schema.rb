@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180221125211) do
+ActiveRecord::Schema.define(version: 20180223095013) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,13 +43,11 @@ ActiveRecord::Schema.define(version: 20180221125211) do
   end
 
   create_table "meetings", force: :cascade do |t|
-    t.datetime "start_date"
-    t.datetime "end_date"
     t.bigint "user_id"
-    t.bigint "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_meetings_on_item_id"
+    t.bigint "dispo_id"
+    t.index ["dispo_id"], name: "index_meetings_on_dispo_id"
     t.index ["user_id"], name: "index_meetings_on_user_id"
   end
 
@@ -76,6 +74,5 @@ ActiveRecord::Schema.define(version: 20180221125211) do
 
   add_foreign_key "dispos", "items"
   add_foreign_key "items", "users"
-  add_foreign_key "meetings", "items"
   add_foreign_key "meetings", "users"
 end

@@ -1,5 +1,5 @@
 class MeetingsController < ApplicationController
-  before_action :set_meeting, only: [:new, :create, :edit, :update, :accept, :decline]
+  before_action :set_meeting, only: [:new, :create, :edit, :update, :accept, :decline, :destroy]
 
   def new
     @meeting = Meeting.new
@@ -9,13 +9,12 @@ class MeetingsController < ApplicationController
   def create
     @meeting = Meeting.new(meeting_params)
     @meeting.loser = current_user
-    # @meeting.user = User.find(params)
-    @meeting.item = Item.find(params[:item_id])
     authorize @meeting
+
     if @meeting.save
-      redirect_to meeting_path(@meeting)
+      redirect_to user_path(current_user)
     else
-      render :new
+      render :item
     end
   end
 
@@ -26,36 +25,34 @@ class MeetingsController < ApplicationController
   end
 
   def update
-    @meeting.loser = current_user
-    authorize @meeting
-    @meeting.update(meeting_params)
+    # @meeting.loser = current_user
+    # authorize @meeting
+    # @meeting.update(meeting_params)
   end
 
   def accept
-    @meeting.item.loser = current_user
-
-    redirect_to user_path(current_user)
   end
 
   def decline
-    redirect_to user_path(current_user)
   end
 
-  # def destroy
-  #   @meeting.loser = current_user
-  #   authorize @meeting
-  #   @meeting.destroy
-  # end
+  def destroy
+    # @meeting.loser = current_user
+    # /items/:item_id/meetings/:id
+    @meeting = Meeting.find(params[:id])
+    authorize @meeting
+    @meeting.destroy
+    redirect_to user_path(current_user)
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_meeting
-      @meeting = Meeting.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meeting_params
-      params.require(:meeting).permit(:user, :item, :loser, :start_date, :end_date)
+      params.require(:meeting).permit(:dispo_id)
     end
   end
 
