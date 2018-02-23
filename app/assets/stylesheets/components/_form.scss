@@ -35,3 +35,15 @@
   padding: 0px 400px;
   height: 680px;
 }
+
+.devise-signup{
+  max-width: 700px;
+  a{
+    color: $orange;
+  }
+}
+
+abbr[title="required"]{
+  display: none;
+}
+
