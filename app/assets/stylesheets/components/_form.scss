@@ -19,6 +19,18 @@
     color: $orange;
   }
 }
+.devise-form{
+  max-width: 300px;
+  text-decoration: none;
+  a{
+    color: $orange;
+  }
+}
+.devise-form-container{
+  display: flex;
+  justify-content: center;
+  align-item: center;
+}
 .form-container {
   padding: 0px 400px;
   height: 700px;
