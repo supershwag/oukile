@@ -3,7 +3,7 @@
   <% if params[:query_category].present? ||
     params[:query_location] %>
   <div class = "container" id="filters-container">
-    <h3 style="font-size: 20px" id= "search-more">Résultats de la recherche </h3>
+    <h3 style="font-size: 18px" id= "search-more">Résultats de la recherche: </h3>
     <div id="query">
       <strong> Catégorie: </strong>
       <% if params[:query_category].present? %>
@@ -15,23 +15,15 @@
     <div id="query">
       <strong> Lieu: </strong>
       <% if params[:query_location].present? %>
-      <em>  à <%= params[:query_location].downcase %>  </em>
+      <em><%= params[:query_location].downcase.slice(0, 30)%>..  </em>
       <% else %>
       <em>  partout    </em>
       <% end %>
     </div>
-    <div id="query">
-      <strong> Date: </strong>
-      <% if params[:query_date].present? %>
-      <em>  trouvé(s) le <%= params[:query_date]%>  </em>
-      <% else %>
-      <em>  toutes les dates    </em>
-      <% end %>
-    </div>
     <br>
-    <h3 style="font-size: 20px" id= "search-more"> Mettre à jour ma recherche </h3>
-    <div class = "search-bar">
-      <i class="fas fa-search" id = "search-magnifier">  </i>
+    <h3 style="font-size: 18px" id= "search-more"> Mettre à jour ma recherche: </h3>
+    <div class = "search-bar2">
+      <i class="fas fa-search" id = "search-magnifier2">  </i>
       <%= form_tag items_path, method: :get, class: "form-inline" do %>
       <div class="form-group">
         <%= select_tag :query_category,

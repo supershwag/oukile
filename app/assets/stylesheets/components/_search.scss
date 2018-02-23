@@ -26,7 +26,39 @@
 #search-more {
   font-weight: bold;
   color: #FFA300;
+  margin-top: 15px;
 }
 .btn {
+  padding: 5px !important;
+}
+
+.search-bar2 {
+  display: flex;
+  position: relative;
+  height: 50px;
+  color: $gray;
+  hover: $orange;
+  font-size: 12px;
+  hover: $light-gray;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 10px;
+}
+.selection2 {
+  border: none;
+  background: $white;
+}
+#search-form2 {
+  margin: 5px;
+}
+#search-magnifier2 {
+  color: $unpeumoinslight-gray !important;
+  font-size: 16px;
+}
+#search-more2 {
+  font-weight: bold;
+  color: #FFA300;
+}
+.btn2 {
   padding: 5px !important;
 }
