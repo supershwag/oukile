@@ -2,20 +2,27 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <h3 class="modal-title" id="exampleModalLabel">Retrouves <%= @item.finder.first_name %>!</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
-        </button>
+          </button>
       </div>
       <div class="modal-body">
-        <%= cl_image_tag @item.finder.photo, height: 300, width: 400, crop: :fill, class: "avatar-meeting-modal" %>
-        <%= @item.user_id %>
+        <%= cl_image_tag @item.finder.photo, height: 150, width: 150, crop: :fill, class: "avatar-meeting-modal" %>
+        <br>
+        <br>
+        <h4><%= @item.finder.first_name %> est disponible aux dates suivantes:</h4>
         <% @dispos.each do |dispo| %>
-              <%= dispo.start_date %> <%= dispo.end_date %>| <%= @item.location %>
-              <%= simple_form_for [@item, Meeting.new] do |f| %>
+              <%= dispo.start_date %><%= simple_form_for [@item, Meeting.new] do |f| %>
               <%= f.input :dispo_id, as: :hidden, input_html: { value: dispo.id } %>
               <%= f.submit "Accept", class: "btn btn-primary sweet-alert-button" %>
               <% end %>
+              <%= dispo.end_date %><%= simple_form_for [@item, Meeting.new] do |f| %>
+              <%= f.input :dispo_id, as: :hidden, input_html: { value: dispo.id } %>
+              <%= f.submit "Accept", class: "btn btn-primary sweet-alert-button" %>
+              <% end %>
+              <br>
+              <%= @item.location %>
           <% end %>
       </div>
       <div class="modal-footer">
