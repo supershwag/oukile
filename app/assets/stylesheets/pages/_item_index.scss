@@ -17,12 +17,12 @@ body {
 }
 
 .card-index {
-  margin-top: 50px;
-  margin-bottom: 150px;
+  margin-top: 20px;
   margin-right: 150px;
   width: 330px;
   padding: 10px;
   position: relative;
+  height: 300px;
 }
 
 #results-container {
@@ -78,6 +78,7 @@ body {
 .card-link-index:hover {
   opacity: 0.1;
 }
+
 
 // .card-info-index {
 //   padding: 5px;
