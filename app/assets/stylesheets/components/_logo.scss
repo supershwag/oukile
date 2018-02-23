@@ -1,9 +1,10 @@
 .logo {
-  font-size: 35px;
+  font-size: 30px;
   font-weight: bold;
   text-decoration: none !important;
-  color: #ffa200 !important;
+  color: rgb(50,50,50) !important;
   :hover {
     color: white !important;
+    text-decoration: none;
   }
 }
