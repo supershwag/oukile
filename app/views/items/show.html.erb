@@ -42,7 +42,7 @@
       <% end %>
       <% unless @item.finder == current_user %>
       <button type="button" class="btn btn-info set-meeting-button" data-toggle="modal" data-target="#exampleModal">
-      Retrouver mon objet!
+      C'est mon <%= @item.name %> !
       </button>
       <%= render 'shared/modal' %>
       <% end %>
