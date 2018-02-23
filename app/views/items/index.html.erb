@@ -1,5 +1,5 @@
 <div class = "container" id="filters-container">
-<!--   <h2 style="font-size: 20px">Résultats de la recherche </h2> -->
+  <h3 style="font-size: 20px" id= "search-more">Résultats de la recherche </h3>
     <div id="query">
       <strong> Catégorie: </strong>
       <% if params[:query_category].present? %>
@@ -24,9 +24,49 @@
     <em>  toutes les dates    </em>
     <% end %>
     </div>
+  <br>
+  <h3 style="font-size: 20px" id= "search-more"> Mettre à jour ma recherche </h3>
+    <div class = "search-bar">
+    <i class="fas fa-search" id = "search-magnifier">  </i>
+        <%= form_tag items_path, method: :get, class: "form-inline" do %>
+          <div class="form-group">
+            <%= select_tag :query_category,
+              options_for_select(["Bijoux", "Électronique", "Papiers d'identité", "Peluche", "Vêtements",  "Divers"], params[:query_category]),
+              include_blank: "Catégorie",
+              style: "width: 120px",
+              class: "form-control"
+            %>
+          </div >
+          <!-- div class="form-group">
+            <%= text_field_tag :name,
+              params[:name],
+              class: "form-control"
+            %>
+          </div> -->
+          <div class="form-group">
+            <%= text_field_tag :query_location,
+              params[:query_location],
+              class: "form-control",
+              id: "item_location",
+              placeholder: "Où?"
+            %>
+          </div>
+         <!--  <div class="form-group">
+            <%= text_field_tag :query_date,
+              params[:query_date],
+              class: "form-control",
+              placeholder: "Quand avez-vous perdu cet objet?",
+              input_html: {type: :date}
+            %>
+          </div> -->
+        <button type="submit" class = "btn btn-info"> Go! </button>
+      <% end %>
+  </div>
  <!--
   <div class = "btn btn-warning"> Location </div>
   <div class = "btn btn-danger"> Date found </div> -->
+
+
 </div>
 
 <div class="content">
