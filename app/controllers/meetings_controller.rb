@@ -10,8 +10,9 @@ class MeetingsController < ApplicationController
     @meeting = Meeting.new(meeting_params)
     @meeting.loser = current_user
     authorize @meeting
+
     if @meeting.save
-      redirect_to meeting_path(@meeting)
+      redirect_to user_path(current_user)
     else
       render :new
     end
@@ -51,7 +52,7 @@ class MeetingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meeting_params
-      params.require(:meeting).permit(:dispo)
+      params.require(:meeting).permit(:dispo_id)
     end
   end
 

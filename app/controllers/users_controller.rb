@@ -10,13 +10,9 @@ def show
     @user_items << item if item.finder = current_user
   end
   # Meetings in user profile
-  @meetings = Meeting.all
-  @user_meetings = []
-  @meetings.each do |meeting|
-    meeting.finder || meeting.loser = current_user
-    @user_meetings << meeting
-  end
-
+  @loser_meetings = current_user.meetings
+  @finder_meetings = Meeting.joins(dispo: :item).where(items: { user_id: current_user.id })
+  # @meetings = loser_meetings + finder_meetings
   authorize @user
 end
 
