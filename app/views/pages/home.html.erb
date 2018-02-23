@@ -1,8 +1,9 @@
 
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 50%), url(<%= image_path('https://images.unsplash.com/reserve/7MWItPwYTzOaKwG6SYLl_O14A0436.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e9b725a98d12ba2e669aeb7e72edb42c&auto=format&fit=crop&w=1500&q=80')%>);">
 <div class="banner-content">
-  <h1>OuKiLélé</h1>
-  <p>Vous avez perdu un objet ? On vous aide à le retrouver!</p>
+<!--   <h1>OuKiLélé</h1> -->
+  <h2> Qu'avez-vous perdu? <h2>
+  <h4><span id="banner-typed-text"></span></p></h4>
     <!-- Search Bar -->
   <div class = "search-bar">
     <i class="fas fa-search" id = "search-magnifier">  </i>
@@ -25,7 +26,7 @@
               params[:query_location],
               class: "form-control",
               id: "item_location",
-              placeholder: "Où avez-vous perdu cet objet?"
+              placeholder: "Où l'avez-vous perdu?"
             %>
           </div>
          <!--  <div class="form-group">
@@ -41,7 +42,6 @@
   </div>
 </div>
 </div>
-
 <div class = "wrapper">
 
     <div class = "row" style= "padding: 20px; font-family: $body-font; font-weight: bold; text-align: center;">
@@ -100,10 +100,3 @@
 
 </div>
 </div>
-
-
-
-
-
-
-
