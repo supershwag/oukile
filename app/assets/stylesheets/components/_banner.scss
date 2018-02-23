@@ -18,10 +18,13 @@
   font-weight: lighter;
   color: rgb(255, 255, 255);
   opacity: 0.6;
-  margin-bottom: 30px;
+  margin: 50px;
 }
 
 .btn {
   padding: 10px !important;
   margin: 10px !important;
+}
+.wrapper {
+  background: $brown_b;
 }

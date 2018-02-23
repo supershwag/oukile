@@ -18,6 +18,12 @@
 .navbar-wagon-brand img {
   height: 50px;
 }
+.logo{
+  color:black;
+  font-weight:bold;
+  font-size:20px;
+  text-decoration: none;
+}
 
 /* User Avatar */
 .navbar-wagon .avatar {
@@ -37,6 +43,7 @@
 .navbar-wagon-item {
   cursor: pointer;
   padding: 0 20px;
+  font-family: $headers-font;
 }
 
 /* Navbar link */
