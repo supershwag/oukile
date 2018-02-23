@@ -1,5 +1,7 @@
 <div id="results-container">
 
+  <% if params[:query_category].present? ||
+    params[:query_location] %>
   <div class = "container" id="filters-container">
     <h3 style="font-size: 20px" id= "search-more">Résultats de la recherche </h3>
     <div id="query">
@@ -56,9 +58,9 @@
 
               <button type="submit" class = "btn btn-info"> Go! </button>
               <% end %>
-
-            </div>
-          </div>
+    </div>
+  </div>
+  <% end %>
 
           <div class="content-index">
             <div class="container-index" id="search-results">
