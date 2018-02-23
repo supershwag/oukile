@@ -33,6 +33,8 @@ class MeetingsController < ApplicationController
 
   def accept
     @meeting.item.loser = current_user
+
+    redirect_to user_path(current_user)
   end
 
   def decline

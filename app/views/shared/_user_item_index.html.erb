@@ -4,14 +4,14 @@
     <%= cl_image_tag item.photo, height: 200, width: 300, crop: :fill, class: "card-img-user" %>
     <div class="card-header">
       <h2 class="card-category-user">
-        <%= link_to item.name, item_path(item) %>
+        <%= item.category %>
       </h2>
       <div class="card-description-user">
-        <p> <%= item.category %></p>
+        <h3> <%= item.name %></h3>
         <p> <%= item.location %> - <%= item.date_found %></p>
       </div>
     </div>
-    <a class="card-link-user" href="#" ></a>
+    <%= link_to "", item_path(item), class: "card-link-user" %>
     </div>
     <% end %>
   </div>
