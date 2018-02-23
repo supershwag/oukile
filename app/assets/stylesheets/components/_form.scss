@@ -1,0 +1,23 @@
+.new_form{
+  padding: 20px 60px;
+  border-radius: 0px 0px 10px 10px;
+  input{
+  border-radius: 4px;
+  }
+  background-color: white;
+  border: solid 1px #F9F9F9;
+  border-top: solid 3px $orange;
+  margin-top: 100px;
+  h1{
+    font-weight: 900;
+    font-size: 25px;
+    color: $orange;
+  }
+  .control-label{
+  text-align: left;
+    font-weight: 900;
+    font-size: 18px;
+    color: $orange;
+  }
+}
+

@@ -1,15 +1,82 @@
-<div class="text-center">
-  <h1>Tous nos objets trouvés</h1>
-  <p>Vous avez perdu quelque chose ? Quelqu'un l'a peut-être trouvé !</p>
+<div class = "container" id="filters-container">
+  <h3 style="font-size: 20px" id= "search-more">Résultats de la recherche </h3>
+    <div id="query">
+      <strong> Catégorie: </strong>
+      <% if params[:query_category].present? %>
+      <em>  <%= params[:query_category]%>   </em>
+       <% else %>
+      <em>  Tous les objets trouvés   </em>
+      <% end %>
+    </div>
+    <div id="query">
+    <strong> Lieu: </strong>
+    <% if params[:query_location].present? %>
+    <em>  à <%= params[:query_location].downcase %>  </em>
+    <% else %>
+    <em>  partout    </em>
+    <% end %>
+    </div>
+    <div id="query">
+    <strong> Date: </strong>
+    <% if params[:query_date].present? %>
+    <em>  trouvé(s) le <%= params[:query_date]%>  </em>
+    <% else %>
+    <em>  toutes les dates    </em>
+    <% end %>
+    </div>
+  <br>
+  <h3 style="font-size: 20px" id= "search-more"> Mettre à jour ma recherche </h3>
+    <div class = "search-bar">
+    <i class="fas fa-search" id = "search-magnifier">  </i>
+        <%= form_tag items_path, method: :get, class: "form-inline" do %>
+          <div class="form-group">
+            <%= select_tag :query_category,
+              options_for_select(["Bijoux", "Électronique", "Papiers d'identité", "Peluche", "Vêtements",  "Divers"], params[:query_category]),
+              include_blank: "Catégorie",
+              style: "width: 120px",
+              class: "form-control"
+            %>
+          </div >
+          <!-- div class="form-group">
+            <%= text_field_tag :name,
+              params[:name],
+              class: "form-control"
+            %>
+          </div> -->
+          <div class="form-group">
+            <%= text_field_tag :query_location,
+              params[:query_location],
+              class: "form-control",
+              id: "item_location",
+              placeholder: "Où?"
+            %>
+          </div>
+         <!--  <div class="form-group">
+            <%= text_field_tag :query_date,
+              params[:query_date],
+              class: "form-control",
+              placeholder: "Quand avez-vous perdu cet objet?",
+              input_html: {type: :date}
+            %>
+          </div> -->
+        <button type="submit" class = "btn btn-info"> Go! </button>
+      <% end %>
+  </div>
+ <!--
+  <div class = "btn btn-warning"> Location </div>
+  <div class = "btn btn-danger"> Date found </div> -->
+
+
 </div>
 
 <div class="content">
-  <div class="container">
+  <div class="container" id = "search-results">
+    <h4> <%= @items.length %> résultat(s) trouvé(s)</h4>
     <div class="row">
       <% @items.each do |item| %>
         <% url = image_path('default.jpg') %>
-        <div class="col-xs-12 col-sm-3">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path item.photo, height: 300, width: 400, crop: :fill %>')">
+        <div class="col-xs-12 col-sm-3 col-md-4">
+          <div class="card" id="search-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path item.photo, height: 300, width: 400, crop: :fill %>')">
             <div class="card-header">
               <h2 class="card-category">
                 <%= link_to item.name, item_path(item) %>
@@ -23,14 +90,11 @@
         </div>
       <% end %>
     </div>
-    <%= link_to "Ajouter un objet trouvé", new_item_path, class: "btn btn-primary text-center" %>
-  </div>
-
   <div
     id="map"
     style="width: 100%;
     height: 600px;"
     data-markers="<%= @markers.to_json %>"
   ></div>
-</div>
-
+  </div>
+  </div>

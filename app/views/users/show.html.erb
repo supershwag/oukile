@@ -1,21 +1,26 @@
+
 <div class="user-show">
-  <div class="user-show-photo">
-   <%= cl_image_tag current_user.photo, height: 300, width: 400, crop: :fill %>
-   <div class="buttons">
-     <%= link_to "Mettre à jour", edit_user_path(current_user), class: "btn btn-primary" %>
-     <br>
-     <%= link_to "Mes meetings", meeting_path(current_user), class: "btn btn-primary" %>
-     <br>
-     <%= link_to "J'ai trouvé!", new_item_path, class: "btn btn-primary" %>
-     <br>
-   </div>
- </div>
- <div class="user-show-details">
-  <h3>Nom</h3>
-  <%= current_user.first_name %>
-  <h3>Nom de Famille</h3>
-  <%= current_user.last_name %>
-  <h3>Email</h3>
-  <%= current_user.email %>
+  <div class="user-left-side-profile">
+    <%= cl_image_tag current_user.photo, height: 200, width: 200, crop: :fill, class: "user-show-photo" %>
+    <div class="user-profile-name">
+      <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+      <p><%= current_user.email %></p>
+    </div>
+  </div>
+   <div class="user-details">
+    <div class="tabs">
+      <div class="tab active" data-section="items">
+        <h3>Objets</h3>
+      </div>
+      <div class="tab" data-section="meetings">
+        <h3>Meetings</h3>
+      </div>
+    </div>
+    <div class="user-show-details" data-section="items">
+      <%= render 'shared/user_item_index' %>
+    </div>
+    <div class="user-show-details hidden" data-section="meetings">
+      <%= render 'shared/user_meetings' %>
+    </div>
   </div>
 </div>

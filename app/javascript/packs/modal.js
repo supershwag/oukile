@@ -1,7 +1,7 @@
 const modal = document.getElementById('myModal');
 
 // Get the button that opens the modal
-const btn = document.getElementById("set-meeting");
+const btn = document.getElementById("set-meeting-button");
 
 // Get the <span> element that closes the modal
 const span = document.getElementsByClassName("close")[0];
@@ -22,3 +22,6 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+
+$('#myModal').modal(options)

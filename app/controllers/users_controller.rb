@@ -3,6 +3,22 @@ skip_after_action :verify_authorized
 
 def show
   @user = current_user
+  # Items in user profile
+  @items = Item.all
+  @user_items = []
+  @items.each do |item|
+    if item.finder = current_user
+      @user_items << item
+    end
+  end
+  # Meetings in user profile
+  @meetings = Meeting.all
+  @user_meetings = []
+  @meetings.each do |meeting|
+    meeting.finder || meeting.loser = current_user
+    @user_meetings << meeting
+  end
+
   authorize @user
 end
 

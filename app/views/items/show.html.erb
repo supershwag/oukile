@@ -4,7 +4,7 @@
 
     <div class="buttons">
 <!--       <button type="button" id="set-meeting" class="btn btn-primary">Meeting</button> -->
-      <p>Disponilibité du trouveur</p>
+      <p>Disponibilité du trouveur</p>
       <% @dispos.each do |dispo| %>
       <br>
         du <%= dispo.start_date %>
@@ -29,7 +29,9 @@
       data: { confirm: "Voulez-vous vraiment effacer cet objet ?" },
       class: "btn btn-danger", id: "sweet-alert-demo" %>
       <% end %>
-
+      <button type="button" class="btn btn-primary set-meeting-buttont" data-toggle="modal" data-target="#exampleModal">
+      Launch modal
+      </button>
       <%= render 'shared/modal' %>
     </div>
   </div>
