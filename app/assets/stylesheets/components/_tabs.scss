@@ -23,7 +23,7 @@
   margin-bottom: 0;
 }
 .tab {
-  background: #505050;
+  background: white;
   flex: 1 1 auto;
   text-align: center;
   padding: 20px 20px 0 20px;
@@ -35,10 +35,9 @@
   border-radius: 0 10px 0 0;
 }
 .tab.active {
-  background: white;
-  color: #505050;
+  background: #505050;
+  color: white;
 }
 .tab.active h3{
   text-decoration: none;
-  box-shadow: 0 3px 0 0 #FFA200;
 }
