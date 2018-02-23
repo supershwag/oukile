@@ -5,3 +5,4 @@ import "bootstrap";
 import { showTab } from "../components/tabs.js";
 showTab();
 import "../plugins/flatpickr"
+import '../components/select2'
