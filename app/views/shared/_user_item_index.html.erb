@@ -1,15 +1,17 @@
 <div class="items-content">
   <% @user_items.each do |item| %>
-    <%= cl_image_tag item.photo, height: 200, width: 200, crop: :fill, class: "user-show-photo" %>
+  <div class="card-user">
+    <%= cl_image_tag item.photo, height: 200, width: 300, crop: :fill, class: "card-img-user" %>
     <div class="card-header">
-      <h2 class="card-category">
+      <h2 class="card-category-user">
         <%= link_to item.name, item_path(item) %>
       </h2>
-      <div class="card-description text-left">
+      <div class="card-description-user">
         <p> <%= item.category %></p>
         <p> <%= item.location %> - <%= item.date_found %></p>
       </div>
     </div>
+    <a class="card-link-user" href="#" ></a>
+    </div>
+    <% end %>
   </div>
-  <% end %>
-</div>
