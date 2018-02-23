@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :items do
     resources :meetings, only: [:new, :create]
   end
-  resources :meetings, only: [:edit, :update]
+  resources :meetings, only: [:edit, :update, :destroy]
   get '/meetings/:id/accept', to: 'meetings#accept', as: :accept_meeting
   get '/meetings/:id/decline', to: 'meetings#decline', as: :decline_meeting
   resources :items do

@@ -1,7 +1,7 @@
 import swal from 'sweetalert';
 
 function bindSweetAlertButtonDemo() {
-  document.querySelector('.sweet-alert-button').addEventListener('click', () => {
+  document.getElementById('.sweet-alert-button').addEventListener('click', () => {
     swal({
       title: "A nice alert",
       text: "This is a great alert, isn't it?",
