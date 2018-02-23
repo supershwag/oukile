@@ -4,7 +4,7 @@
     <div class="buttons" id="show-buttons">
 <!--       <button type="button" id="set-meeting" class="btn btn-primary">Meeting</button> -->
       <br>
-      <p>Disponibilités du trouveur</p>
+      <p>Mes disponibilités</p>
       <% @dispos.each do |dispo| %>
       <br>
         du <%= dispo.start_date %>
@@ -40,7 +40,7 @@
       data: { confirm: "Voulez-vous vraiment effacer cet objet ?" },
       class: "btn btn-info", id: "sweet-alert-demo" %>
       <% end %>
-      <% if policy(@item).update? %>
+      <% if !policy(@item).update? %>
       <button type="button" class="btn btn-info set-meeting-button" data-toggle="modal" data-target="#exampleModal">
       Retrouver mon objet!
       </button>
