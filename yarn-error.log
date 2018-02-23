@@ -4,6 +4,7 @@ Arguments:
 PATH: 
   /Users/minnie/.rbenv/versions/2.4.3/bin:/usr/local/Cellar/rbenv/1.1.1/libexec:./bin:./node_modules/.bin:/Users/minnie/.rbenv/shims:/Users/minnie/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin
 
+
 Yarn version: 
   1.3.2
 
@@ -23,8 +24,8 @@ npm manifest:
       "flatpickr": "^4.3.2",
       "gmaps": "^0.4.24",
       "jquery": "^3.3.1",
-      "select2": "^4.0.6-rc.1"
-      // "typed.js": "^2.0.6"
+      "select2": "^4.0.6-rc.1",
+      "typed.js": "^2.0.6"
     },
     "devDependencies": {
       "webpack-dev-server": "^2.11.1"
