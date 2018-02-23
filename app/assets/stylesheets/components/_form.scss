@@ -21,3 +21,17 @@
   }
 }
 
+.devise-form{
+  max-width: 300px;
+  text-decoration: none;
+  a{
+    color: $orange;
+  }
+}
+
+.devise-form-container{
+  display: flex;
+  justify-content: center;
+  align-item: center;
+}
+
