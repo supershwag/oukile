@@ -1,8 +1,9 @@
 
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 50%), url(<%= image_path('https://images.unsplash.com/reserve/7MWItPwYTzOaKwG6SYLl_O14A0436.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e9b725a98d12ba2e669aeb7e72edb42c&auto=format&fit=crop&w=1500&q=80')%>);">
 <div class="banner-content">
-  <h1>OuKiLélé</h1>
-  <p>Vous avez perdu un objet ? On vous aide à le retrouver!</p>
+<!--   <h1>OuKiLélé</h1> -->
+  <h2> Qu'avez-vous perdu? <h2>
+  <h4><span id="banner-typed-text"></span></p></h4>
     <!-- Search Bar -->
   <div class = "search-bar">
     <i class="fas fa-search" id = "search-magnifier">  </i>
@@ -25,7 +26,7 @@
               params[:query_location],
               class: "form-control",
               id: "item_location",
-              placeholder: "Où avez-vous perdu cet objet?"
+              placeholder: "Où l'avez-vous perdu?"
             %>
           </div>
          <!--  <div class="form-group">
@@ -41,46 +42,61 @@
   </div>
 </div>
 </div>
+<div class = "wrapper">
 
-<div class = "container" id= "testimonies-container">
-  <h3> Ils aiment Oukilélé </h3>
-  <div class="col-xs-12 col-sm-4 col-md-6">
-    <div class="card" ontouchstart="this.classList.toggle('hover');">
-      <div id="front">
-          <%= cl_image_tag 'oh3giav72bjmx3biz3xs.jpg', width: 300, crop: :fill, class: "card-img"  %>
-          <h3> Thanh-An, 31 ans </h3>
-      </div>
-      <div id="back">
-        <h4> J'adore Céline Dion. Quand je vais à ses concerts et qu'elle se met à chanter, plus rien n'existe. La dernière fois, Céline chantait "Pour que tu M'aimes Encore". C'était tellement beau que j'ai fait tomber mon granola maison. Je sais pas si vous avez gouté mon granola mais je peux vous dire que j'étais hyper contente que quelqu'un m'écrive sur Oukilélé pour me dire qu'il l'avait retrouvé! Miam miam.
-         </h4>
-      </div>
+    <div class = "row" style= "padding: 20px; font-family: $body-font; font-weight: bold; text-align: center;">
+      <h3> Ils adorent Oukilélé </h3>
     </div>
-  </div>
-  <!-- <div class="col-xs-12 col-sm-4 col-md-4">
-    <div class="card" ontouchstart="this.classList.toggle('hover');">
-      <div id="front">
-          <%= cl_image_tag '9978111.jpg', width: 300, crop: :fill, class: "card-img"  %>
-          <h3> Kévin, 34 ans </h3>
-      </div>
-      <div id="back">
-        <h4> Quand je promène ma fille dans la rue et que je reçois des Slacks de mes étudiants, je prends mon portable pour regarder leurs messages, et là, en 5 secondes, ça peut être le drame! Lapinou se retrouve par terre, on rentre à la maison sans s'en rendre compte, et ça part en pleurs pendant des heures. Mais ça, c'était avant... Avec Oukilélé, je vais au parc l'esprit libre!
-         </h4>
-      </div>
+
+  <div class = "container">
+
+<div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 360px; overflow: hidden; border-radius: 1px;">
+    <div class="img-avatar">
+      <%= cl_image_tag 'oh3giav72bjmx3biz3xs.jpg', width: 300, crop: :fill, class: "d-block w-full"  %>
     </div>
-  </div> -->
-  <div class="col-xs-12 col-sm-4 col-md-6">
-    <div class="card" ontouchstart="this.classList.toggle('hover');">
-      <div id="front">
-          <%= cl_image_tag 'tom.jpg', width: 300, crop: :fill, class: "card-img"  %>
-          <h3> Thomas, 24 ans </h3>
-      </div>
-      <div id="back">
-        <h4> Le vendredi soir, j'aime bien faire la fête avec mes potes du Wagon au 824. La dernière fois, je m'étais descendu quelques litres de Tonton Joēl et là, mon chèche acheté l'année dernière dans le fin fond de l'Inde à un berger kazhake est tombé par terre. Je suis rentré chez moi et le lendemain, une fille hyper mignonne l'a mis en ligne sur Oukilélé. Autant vous dire que depuis je parle d'Oukilélé à tous mes potes. Même ma grand-mère Catoche l'a adopté!
-         </h4>
-      </div>
-    </div>
+
+  <div class="px-2 py-2">
+    <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
+      > Marion Beaufrère</p>
+      <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+        J'ai retrouvé mon chien grâce à OuKiLélé </h1>
+    <p class="mb-1">
+      J'étais desespérée car cela faisait 1 semaine que mon chien était parti. En 3h, quelqu'un m'a contacté pour me dire que mon chien était sain et sauf. Merci
+    </p>
   </div>
 </div>
 
+<div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 360px; overflow: hidden; border-radius: 1px;">
+    <div class="img-avatar">
+    <%= cl_image_tag 'oh3giav72bjmx3biz3xs.jpg', width: 300, crop: :fill, class: "d-block w-full"  %>
+    </div>
 
+  <div class="px-2 py-2">
+    <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
+      > Alex Deval</p>
+      <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+        Sans OuKiLélé, je serais morte </h1>
+    <p class="mb-1">
+      OuKiLéLé c'est vraiment la meilleure plateforme du monde.
+    </p>
+  </div>
+</div>
 
+<div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="width: 360px; overflow: hidden; border-radius: 1px;">
+    <div class="img-avatar">
+    <%= cl_image_tag 'oh3giav72bjmx3biz3xs.jpg', width: 300, crop: :fill, class: "d-block w-full"  %>
+    </div>
+
+  <div class="px-2 py-2">
+    <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px">
+      > Tom Vaillant</p>
+      <h1 class="ff-serif font-weight-normal text-black card-heading mt-0 mb-1" style="line-height: 1.25;">
+        J'ai trouvé l'amour grâce à OuKiLélé</h1>
+    <p class="mb-1">
+      Je cherchais mes clés, j'ai trouvé l'amour à la place.
+    </p>
+  </div>
+</div>
+
+</div>
+</div>
