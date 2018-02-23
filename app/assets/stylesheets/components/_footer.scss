@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 70px;
   padding: 0px 50px;
   color: $gray;
   position: fixed;
@@ -33,4 +33,7 @@
   display:flex;
   justify-content: space-around;
 }
-
+.footer-copyright {
+  color: rgb(160,160,160);
+  font-family: "Quicksand";
+}
