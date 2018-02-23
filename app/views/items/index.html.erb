@@ -78,12 +78,11 @@
         <div class="col-xs-12 col-sm-3 col-md-4">
           <div class="card" id="search-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path item.photo, height: 300, width: 400, crop: :fill %>')">
             <div class="card-header">
-              <h2 class="card-category">
-                <%= link_to item.name, item_path(item) %>
-              </h2>
+              <h2 class="card-category"><%= link_to item.name, item_path(item) %> </h2>
+              <%= cl_image_tag item.finder.photo, height: 200, width: 200, crop: :fill, class: "card-user" %>
               <div class="card-description text-left">
-              <p> <%= item.category %></p>
-               <p> <%= item.location %> - <%= Date.parse(item.date_found).strftime('%d-%m-%Y') %></p>
+              <p> Catégorie: <%= item.category %></p>
+               <p> Trouvé à <%= item.location %> le <%= Date.parse(item.date_found).strftime('%d.%m.%Y') %></p>
                </div>
             </div>
           </div>

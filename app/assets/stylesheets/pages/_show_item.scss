@@ -1,15 +1,29 @@
 .item-show {
   display: flex;
-  padding-top: 30px;
+  padding-top: 100px;
+  height: calc(100vh - 150px);
   width: 90%;
   padding-left: 30px;
 }
 
 .item-show-photo {
-  top: 30px;
-  left: 10px;
+  width: 800px;
+  padding-top: 100px;
+  text-align: center;
+  align-items: center;
+  justify-content: left;
+  top: 50px;
+  left: 100px;
+  border-radius: 2px;
+  border-right: solid 2px gray;
+  background: rgb(245,245,245);
 }
 
 .item-show-details {
   padding-left: 60px;
+  width: 800px;
+}
+#show-buttons {
+  position: relative;
+  bottom: 10px;
 }
