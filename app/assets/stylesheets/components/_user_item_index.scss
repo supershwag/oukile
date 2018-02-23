@@ -2,8 +2,53 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  .card {
-    flex: 0 0 31%;
+  .card-user {
+    flex: 0 0 28%;
     margin: 0 5px 10px !important;
   }
+}
+
+.card-user {
+  height: 200px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-position: center;
+  color: white;
+  position: relative;
+}
+
+.card-category-user {
+  position: absolute;
+  color: #FFF;
+  top: 10px;
+  left: 10px;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+.card-description-user {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.card-description-user h3 {
+  font-size: 30px;
+  font-weight: bolder;
+}
+.card-description-user p {
+  font-size: 20px;
+  opacity: 0.7;
+  font-weight: lighter;
+}
+.card-link-user {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.card-link-user:hover {
+  opacity: 0.1;
 }

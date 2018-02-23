@@ -6,7 +6,6 @@
 }
 .tabs .tab {
   color: white;
-  z-index: 2;
 }
 
 .tabs .tab:hover {
@@ -24,7 +23,7 @@
   margin-bottom: 0;
 }
 .tab {
-  background: #1989ac;
+  background: #505050;
   flex: 1 1 auto;
   text-align: center;
   padding: 20px 20px 0 20px;
@@ -37,9 +36,9 @@
 }
 .tab.active {
   background: white;
-  color: black;
+  color: #505050;
 }
 .tab.active h3{
   text-decoration: none;
-  box-shadow: inset 0 -5px 0 0 #333;
+  box-shadow: inset 0 -5px 0 0 #FFA200;
 }
