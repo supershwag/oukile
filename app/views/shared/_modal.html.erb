@@ -14,7 +14,7 @@
               <%= dispo.start_date %> <%= dispo.end_date %>| <%= @item.location %>
               <%= simple_form_for [@item, Meeting.new] do |f| %>
               <%= f.input :dispo_id, as: :hidden, input_html: { value: dispo.id } %>
-              <%= f.submit "Accept", class: "btn btn-primary" %>
+              <%= f.submit "Accept", class: "btn btn-primary sweet-alert-button" %>
               <% end %>
           <% end %>
       </div>

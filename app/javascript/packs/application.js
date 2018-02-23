@@ -8,3 +8,6 @@ import "../plugins/flatpickr"
 import '../components/select2'
 import { loadDynamicBannerText } from "../components/typed"
 loadDynamicBannerText();
+
+import { bindSweetAlertButtonDemo } from '../components/sweetalert';
+bindSweetAlertButtonDemo();
