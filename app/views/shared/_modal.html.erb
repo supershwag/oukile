@@ -12,11 +12,11 @@
         <% @dispos.each do |dispo| %>
               <%= dispo.start_date %><%= simple_form_for [@item, Meeting.new] do |f| %>
               <%= f.input :dispo_id, as: :hidden, input_html: { value: dispo.id } %>
-              <%= f.submit "Accept", class: "btn btn-primary", id: "sweet-alert-button" %>
+              <%= f.submit "Accept", class: "btn btn-primary sweet-alert-button" %>
               <% end %>
               <%= dispo.end_date %><%= simple_form_for [@item, Meeting.new] do |f| %>
               <%= f.input :dispo_id, as: :hidden, input_html: { value: dispo.id } %>
-              <%= f.submit "Accept", class: "btn btn-primary", id: "sweet-alert-button" %>
+              <%= f.submit "Accept", class: "btn btn-primary sweet-alert-button" %>
               <% end %>
               <br>
               <%= @item.location %>
